@@ -9,7 +9,7 @@ namespace server.DTOs
         public string? Email { get; set; }
         public string PhoneNumber { get; set; }
     }
-    public class UserCreatDto
+    public class UserCreateDto
     {
         [Required, Range(9,9)]
         public string Id { get; set; }
@@ -27,9 +27,11 @@ namespace server.DTOs
 
     public class UserUpdateDto
     {
-        [Required, MaxLength(100)]
+        [MinLength(5)]
+        public string UserName { get; set; }
+        [MaxLength(100)]
         public string FullName { get; set; }
-        [Required, EmailAddress]
+        [EmailAddress]
         public string? Email { get; set; }
         [Phone]
         public string PhoneNumber { get; set; }

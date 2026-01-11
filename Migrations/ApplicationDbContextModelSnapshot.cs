@@ -22,6 +22,21 @@ namespace server.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("PackagePurchase", b =>
+                {
+                    b.Property<int>("PackagesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PurchasesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("PackagesId", "PurchasesId");
+
+                    b.HasIndex("PurchasesId");
+
+                    b.ToTable("PurchasePackages", (string)null);
+                });
+
             modelBuilder.Entity("server.Models.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -122,6 +137,34 @@ namespace server.Migrations
                     b.ToTable("Gifts");
                 });
 
+            modelBuilder.Entity("server.Models.Package", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Packages");
+                });
+
             modelBuilder.Entity("server.Models.Purchase", b =>
                 {
                     b.Property<int>("Id")
@@ -207,7 +250,22 @@ namespace server.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Buyers");
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("PackagePurchase", b =>
+                {
+                    b.HasOne("server.Models.Package", null)
+                        .WithMany()
+                        .HasForeignKey("PackagesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("server.Models.Purchase", null)
+                        .WithMany()
+                        .HasForeignKey("PurchasesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("server.Models.Gift", b =>

@@ -8,10 +8,9 @@ namespace server.Interfaces
         Task<IEnumerable<UserResponseDto>> GetAll();
         Task<UserResponseDto> GetById(string id);
         Task<UserResponseDto> GetByUserName(string name);
-        Task<UserResponseDto> CreateUser(UserCreatDto user);
-        Task<UserResponseDto> UpdateUser(UserUpdateDto user);
+        Task<UserResponseDto> AddUser(UserCreateDto user);
+        Task<UserResponseDto> UpdateUser(string id, UserUpdateDto user);
         Task<bool> DeleteUser(string id);
-        Task<bool> Exist(string id);
-        Task<bool> EmailExist(string email);
+        Task<LoginRequestDto> Authenticate(string userName, string password);
     }
 }

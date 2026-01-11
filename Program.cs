@@ -13,7 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
          "Server=DESKTOP-IN2P6D4;DataBase=ChineseSaleDb;Integrated Security=SSPI;Persist Security Info=False;TrustServerCertificate=True"
-         //"Server=srv2\\pupils;DataBase=ChineseSaleDb216306829;Integrated Security=SSPI;Persist Security Info=False;TrustServerCertificate=True"
+        //"Server=srv2\\pupils;DataBase=ChineseSaleDb216306829;Integrated Security=SSPI;Persist Security Info=False;TrustServerCertificate=True"
         )
 );
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();

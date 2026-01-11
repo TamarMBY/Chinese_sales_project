@@ -12,7 +12,7 @@
     public class LoginResponseDto {
         public string Token { get; set; } = string.Empty;
         public string TokenType { get; set; } = "Bearer";
-        public int ExpirenIn { get; set; }
+        public int ExpiresIn { get; set; }
         public UserResponseDto User { get; set; } = null!;
     }
 
