@@ -78,7 +78,7 @@ namespace server.Controllers
                 return BadRequest(new { messege = ex.Message });
             }
         }
-        [HttpGet]
+        [HttpGet("FilterDonors")]
         [ProducesResponseType(typeof(IEnumerable<DonorRespnseDto>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<DonorRespnseDto>>> FilterDoners(
             [FromQuery] string? name, [FromQuery] string? email, [FromQuery] int? giftId
