@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using server.DTOs;
 using server.Interfaces;
@@ -17,7 +18,6 @@ namespace server.Controllers
         {
             _categoryService = categoryService;
         }
-
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<CategoryResponseDto>), StatusCodes.Status200OK)]
         public  async Task<ActionResult<IEnumerable<CategoryResponseDto>>> GetAll()
