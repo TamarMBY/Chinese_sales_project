@@ -1,0 +1,20 @@
+<p>category works!</p>
+
+<input type="text" placeholder="name" #name/>
+<input type="text" placeholder="descriptoin" #descriptoin/>
+<button (click)="add(name.value, descriptoin.value)">add</button>
+@if(flagUpdate == true)
+{
+    <input type="text" placeholder="name" #name/>
+    <input type="text" placeholder="descriptoin" #descriptoin/>
+    <button (click)="update(name.value, descriptoin.value)">update</button>
+}
+@for(c of list$ | async; track c;)
+{
+    <div>
+        <span>{{c.name}} + {{c.descriptoin}}</span>
+        <button (click)="delete(c.id!)">delete</button>
+        <button (click)="openUpdate(c.id)">update</button>
+    </div>
+}
+    
