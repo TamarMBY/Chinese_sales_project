@@ -1,0 +1,48 @@
+<!-- Filter -->
+<div>
+  <input #nameInput type="text" placeholder="Name" />
+  <input #emailInput type="text" placeholder="Email" />
+  <input #giftIdInput type="number" placeholder="Gift ID" />
+  <button
+    type="button"
+    (click)="
+      filter(
+        nameInput.value,
+        emailInput.value,
+        giftIdInput.value ? +giftIdInput.value : undefined
+      )
+    "
+  >
+    Filter
+  </button>
+  <button type="button" (click)="refreshList()">Clear Filters</button>
+</div>
+
+<hr />
+
+<!-- List -->
+@for (d of (list$ | async); track d.id) {
+  <div>
+    <span>{{ d.name }}</span>
+
+    <button type="button" (click)="openEdit(d)">Edit</button>
+    <button type="button" (click)="delete(d.id!)">Delete</button>
+  </div>
+}
+
+<hr />
+
+<!-- Form -->
+<input [(ngModel)]="draftDonor.id" placeholder="tz (id)">
+<input [(ngModel)]="draftDonor.name" placeholder="name">
+<input [(ngModel)]="draftDonor.phoneNumber" placeholder="phone">
+<input [(ngModel)]="draftDonor.email" placeholder="email">
+<input [(ngModel)]="draftDonor.logoUrl" placeholder="logo url">
+
+<button type="button" (click)="save()">
+  {{ isEditMode ? 'Update' : 'Add' }}
+</button>
+
+<button type="button" (click)="resetForm()" *ngIf="isEditMode">
+  Cancel
+</button>

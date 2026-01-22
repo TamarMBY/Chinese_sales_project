@@ -1,0 +1,10 @@
+<p>register works!</p>
+<form [formGroup]="profileForm" (ngSubmit)= "register()">
+    <input type="text" placeholder="ת.ז."  formControlName = Id/>
+    <input type="text" placeholder="שם צלא" formControlName = FullName/>
+    <input type="text" placeholder="שם משתמש" formControlName = UserName/>
+    <input type="password" placeholder="סיסמא" formControlName = Password/>
+    <input type="email" placeholder="אימייל" formControlName = Email/>
+    <input type="text" placeholder="פלפון" formControlName = PhoneNumber/>
+    <button type="submit">register</button>
+</form>

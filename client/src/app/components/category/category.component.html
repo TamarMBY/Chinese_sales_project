@@ -1,0 +1,24 @@
+<p>category works!</p>
+<!-- List -->
+@for (c of (list$ | async); track c.id) {
+  <div>
+    <span>{{ c.name }}</span>
+    <span>{{ c.description }}</span>
+    <button type="button" (click)="openEdit(c)">Edit</button>
+    <button type="button" (click)="delete(c.id!)">Delete</button>
+  </div>
+}
+
+<hr />
+
+<!-- Form -->
+<input [(ngModel)]="draftCategory.name" placeholder="name">
+<input [(ngModel)]="draftCategory.description" placeholder="description">
+
+<button type="button" (click)="save()">
+  {{ isEditMode ? 'Update' : 'Add' }}
+</button>
+
+<button type="button" (click)="resetForm()" *ngIf="isEditMode">
+  Cancel
+</button>
