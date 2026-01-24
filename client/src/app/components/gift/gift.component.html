@@ -1,0 +1,49 @@
+<p>gift works!</p>
+<!-- Filter -->
+<div>
+    <input #nameInput type="text" placeholder="Name" />
+    <input #categoryIdInput type="number" placeholder="Category ID" />
+    <input #donorIdInput type="text" placeholder="Donor ID" />
+    <input #buyerCountInput type="number" placeholder="Buyer Count" />
+    <button type="button" (click)="
+        filter(
+            nameInput.value,
+            categoryIdInput.value ? +categoryIdInput.value : undefined,
+            donorIdInput.value,
+            buyerCountInput.value ? +buyerCountInput.value : undefined
+        )
+  ">
+        Filter
+    </button>
+    <button type="button" (click)="refreshList()">Clear Filters</button>
+</div>
+<hr />
+<!-- List -->
+@for (g of (list$ | async); track g.id) {
+  <div>
+    <button (click)="getById(g.id!)">{{ g.name }}</button>
+
+    <button type="button" (click)="openEdit(g)">Edit</button>
+    <button type="button" (click)="delete(g.id!)">Delete</button>
+    <!-- <button type="button" (click)="lottery(g.id!)">Lottery</button> -->
+  </div>
+}
+<hr />
+<!-- Form -->
+<!-- <input [(ngModel)]="draftGift.id" placeholder="tz (id)"> -->
+<input [(ngModel)]="draftGift.name" placeholder="name">
+<input [(ngModel)]="draftGift.description" placeholder="description">
+<input [(ngModel)]="draftGift.imageUrl" placeholder="image url">
+<input [(ngModel)]="draftGift.categoryId" placeholder="category id" >
+<!-- <select >
+    @for c of (categories$ | async); track c.id {
+        <option [value]="c.id" [selected]="c.id === draftGift.categoryId">{{ c.name }}</option>
+    }
+</select> -->
+<input [(ngModel)]="draftGift.donorId" placeholder="donor id">
+<button type="button" (click)="save()">
+  {{ isEditMode ? 'Update' : 'Add' }}   
+</button>
+<button type="button" (click)="resetForm()" *ngIf="isEditMode">
+  Cancel
+</button> 

@@ -3,9 +3,10 @@ import { CategoryService } from '../../services/category.service';
 import { CategoryModel } from '../../models/category.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { GiftComponent } from "../gift/gift.component";
 @Component({
   selector: 'app-category',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, GiftComponent, GiftComponent],
   templateUrl: './category.component.html',
   styleUrl: './category.component.css'
 })
@@ -18,6 +19,16 @@ export class CategoryComponent {
     description: ''
   };
   isEditMode = false;
+  categoryIdForFilter: number = 0;
+  getById(id: number) {
+    console.log(id);
+    if (!id || id <= 0) this.categoryIdForFilter = id;
+    else {
+      this.categorySrv.getById(id).subscribe(c => {
+        this.categoryIdForFilter = c.id!;
+      });
+    }
+  }
   openEdit(c: CategoryModel) {
     this.isEditMode = true;
     this.draftCategory = {
@@ -26,7 +37,6 @@ export class CategoryComponent {
       description: c.description ?? ''
     };
   }
-
   save() {
     if (!this.draftCategory.name) return;
     const id = this.draftCategory.id;
