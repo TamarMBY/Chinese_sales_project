@@ -2,6 +2,7 @@
 using server.Models;
 using Microsoft.EntityFrameworkCore;
 using server.Interfaces;
+using server.DTOs;
 
 
 namespace server.Repositories
@@ -45,6 +46,11 @@ namespace server.Repositories
             _context.Tickets.Update(ticket);
             await _context.SaveChangesAsync();
             return ticket;
+        }
+
+        Task<Ticket> ITicketRepository.AddTicket(TicketCreateDto tCreateDto)
+        {
+            throw new NotImplementedException();
         }
     }
 }

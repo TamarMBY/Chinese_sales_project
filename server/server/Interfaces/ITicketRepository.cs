@@ -1,4 +1,5 @@
-﻿using server.Models;
+﻿using server.DTOs;
+using server.Models;
 
 namespace server.Interfaces
 {
@@ -9,5 +10,6 @@ namespace server.Interfaces
         Task<Ticket> AddTicket(Ticket ticket);
         Task<Ticket> UpdateTicket(Ticket ticket);
         Task<bool> DeleteTicket(int id);
+        Task<Ticket> AddTicket(TicketCreateDto tCreateDto);
     }
 }

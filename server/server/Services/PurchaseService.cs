@@ -10,12 +10,14 @@ namespace server.Services
     public class PurchaseService : IPurchaseService
     {
         private readonly IPurchaseRepository _purchaseRepository;
+        private readonly ITicketService _ticketService;
         private readonly ILogger<PurchaseService> _logger;
 
 
-        public PurchaseService(IPurchaseRepository purchaseRepository, ILogger<PurchaseService> logger)
+        public PurchaseService(IPurchaseRepository purchaseRepository, ITicketService ticketService, ILogger<PurchaseService> logger)
         {
             _purchaseRepository = purchaseRepository;
+            _ticketService = ticketService;
             _logger = logger;
         }
         public async Task<IEnumerable<PurchaseRespnseDto>> GetAll()
@@ -159,12 +161,12 @@ namespace server.Services
                 throw;
             }
         }
-        public async Task<PurchaseRespnseDto> AddTicketToPurchase(int purchaseId, Ticket ticket)
+        public async Task<PurchaseRespnseDto> AddTicketToPurchase(TicketCreateDto tCreateDto)
         {
             _logger.LogInformation("Post/ add ticket to purchase called");
             try
             {
-                var purchase = await _purchaseRepository.GetById(purchaseId);
+                var purchase = await _purchaseRepository.GetById(tCreateDto.PurchaseId);
                 if (purchase == null) return null;
                 if (!purchase.IsDraft)
                     throw new InvalidOperationException("Cannot modify a finalized purchase.");
@@ -172,18 +174,33 @@ namespace server.Services
                 {
                     throw new InvalidOperationException("You need to buy a new package.");
                 }
-                if (purchase.Tickets.Any(t => t.Id == ticket.Id))
+                var ticket = await _ticketService.AddTicket(tCreateDto);
+                var existingTicket = purchase.Tickets
+                    .FirstOrDefault(t => t.GiftId == ticket.GiftId);
+                if(existingTicket != null)
                 {
-                    ticket.Quantity++;
+                    existingTicket.Quantity++;
+                    await _ticketService.UpdateTicket(existingTicket.Id, new TicketUpdateDto
+                    {
+                        GiftId = existingTicket.GiftId,
+                        PurchaseId = existingTicket.PurchaseId,
+                        Quantity = existingTicket.Quantity
+                    });
                     return MapToResponeseDto(purchase);
                 }
-                var updated = await _purchaseRepository.AddTicketToPurchase(purchaseId, ticket);
-                _logger.LogInformation("Ticket added to purchase Id {PurchaseId} successfully", purchaseId);
+                var updated = await _purchaseRepository.AddTicketToPurchase(new Ticket
+                {
+                    Id = ticket.Id,
+                    GiftId = ticket.GiftId,
+                    PurchaseId = ticket.PurchaseId,
+                    Quantity = ticket.Quantity
+                });
+                _logger.LogInformation("Ticket added to purchase Id {PurchaseId} successfully", tCreateDto.PurchaseId);
                 return MapToResponeseDto(updated);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error while adding ticket to purchase {PurchaseId}", purchaseId);
+                _logger.LogError(ex, "Error while adding ticket to purchase {PurchaseId}", tCreateDto.PurchaseId);
                 throw;
             }
         }

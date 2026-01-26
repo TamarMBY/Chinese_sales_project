@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterModule } from '@angular/router';
+import { BusketComponent } from './components/busket/busket.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterModule],
+  imports: [RouterOutlet, RouterLink, RouterModule, BusketComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

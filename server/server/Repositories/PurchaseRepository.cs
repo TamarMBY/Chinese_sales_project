@@ -75,9 +75,9 @@ namespace server.Repositories
             await _context.SaveChangesAsync();
             return purchase;
         }
-        public async Task<Purchase> AddTicketToPurchase(int purchaseId, Ticket ticket)
+        public async Task<Purchase> AddTicketToPurchase( Ticket ticket)
         {
-            var purchase = await GetById(purchaseId);
+            var purchase = await GetById(ticket.PurchaseId);
             if (purchase == null) return null;
             purchase.Tickets.Add(ticket);
             await _context.SaveChangesAsync();

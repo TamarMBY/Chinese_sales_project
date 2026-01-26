@@ -118,14 +118,14 @@ namespace server.Controllers
             }
             return NoContent();
         }
-        [HttpPost("{purchaseId}/tickets")]
+        [HttpPost("addTicket")]
         [ProducesResponseType(typeof(PurchaseRespnseDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult> AddTicketToPurchase([FromRoute] int purchaseId, [FromBody] Ticket ticket)
+        public async Task<ActionResult> AddTicketToPurchase([FromBody] TicketCreateDto tCreateDto)
         {
             try
             {
-                var purchase = await _purchaseService.AddTicketToPurchase(purchaseId, ticket);
+                var purchase = await _purchaseService.AddTicketToPurchase(tCreateDto);
                 return Ok(purchase);
             }
             catch (ArgumentException ex)

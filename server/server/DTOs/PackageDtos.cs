@@ -20,7 +20,7 @@ namespace server.DTOs
         public string Name { get; set; }
         [Required]
         public string Description { get; set; } = string.Empty; 
-        [Required, Range(1, double.MaxValue)]
+        [Required, Range(1, int.MaxValue)]
         public int Quantity { get; set; }
         [Required, Range(10, double.MaxValue)]
         public decimal Price { get; set; }

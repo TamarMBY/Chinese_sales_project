@@ -10,17 +10,20 @@ public class UserService : IUserService
     private readonly IUserRepository _userRepository;
     private readonly ITokenService _tokenService;
     private readonly IConfiguration _configuration;
+    private readonly IPurchaseService _purchaseServise;
     private readonly ILogger<UserService> _logger;
 
     public UserService(
         IUserRepository userRepository,
         ITokenService tokenService,
         IConfiguration configuration,
+        IPurchaseService purchaseService,
         ILogger<UserService> logger)
     {
         _userRepository = userRepository;
         _tokenService = tokenService;
         _configuration = configuration;
+        _purchaseServise = purchaseService;
         _logger = logger;
     }
 
@@ -76,6 +79,10 @@ public class UserService : IUserService
             };
             var createdUser = await _userRepository.AddUser(user);
             _logger.LogInformation("User created with ID: {UserId}", createdUser.Id);
+            var purchase = await _purchaseServise.AddPurchase(new PurchaseCreateDto
+            {
+                BuyerId = createdUser.Id
+            });
             return MapToResponseDto(createdUser);
         }
         catch (Exception ex)
