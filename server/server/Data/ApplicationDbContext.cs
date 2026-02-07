@@ -13,6 +13,8 @@ namespace server.Data
         public DbSet<Purchase> Purchases { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Package> Packages { get; set; }
+        public DbSet<PurchasePackages> PurchasePakages { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -62,6 +64,7 @@ namespace server.Data
                 entity.Property(e => e.Password).IsRequired().HasMaxLength(50);
                 entity.Property(e => e.Email).HasMaxLength(100);
                 entity.Property(e => e.PhoneNumber).IsRequired().HasMaxLength(10);
+                entity.Property(e => e.Role).IsRequired().HasMaxLength(10);
                 entity.HasMany(e => e.Purchases)
                 .WithOne(p => p.Buyer)
                 .HasForeignKey(p => p.BuyerId)
@@ -78,10 +81,10 @@ namespace server.Data
                 entity.Property(e => e.OrderDate).IsRequired();
                 entity.Property(e => e.IsDraft);
                 entity.HasOne(e => e.Buyer).WithMany(b => b.Purchases).HasForeignKey(e => e.BuyerId).OnDelete(DeleteBehavior.Cascade);
-                entity.HasMany(e => e.Tickets).WithOne(t => t.Purchase).HasForeignKey(t => t.PurchaseId)
+                entity.HasMany(e => e.Tickets)
+                .WithOne(t => t.Purchase)
+                .HasForeignKey(t => t.PurchaseId)
                 .OnDelete(DeleteBehavior.Restrict);
-                modelBuilder.Entity<Purchase>().HasMany(p => p.Packages).WithMany(pkg => pkg.Purchases)
-                .UsingEntity(j => j.ToTable("PurchasePackages"));
 
             });
             modelBuilder.Entity<Ticket>(entity =>
@@ -100,6 +103,20 @@ namespace server.Data
                 entity.Property(e => e.Quantity).IsRequired();
                 entity.Property(e => e.Price).IsRequired();
             });
-        }
+            modelBuilder.Entity<PurchasePackages>(entity =>
+            {
+                entity.HasKey(pp => new { pp.PurchaseId, pp.PackageId });
+                entity.HasOne(pp => pp.Purchase)
+                        .WithMany(p => p.PurchasePackages)
+                        .HasForeignKey(pp => pp.PurchaseId);
+                entity.HasOne(pp => pp.Package)
+                        .WithMany(p => p.PurchasePackages)
+                        .HasForeignKey(pp => pp.PackageId);
+
+                entity.Property(pp => pp.Quantity).IsRequired();
+
+            });
+        
+    }
     }
 }

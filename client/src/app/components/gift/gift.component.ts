@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
+import { TicketModel } from '../../models/ticket.model';
+import { BusketService } from '../../services/busket.service';
+import { BusketModel } from '../../models/busket.model';
 
 
 @Component({
@@ -15,7 +18,24 @@ import { Router } from '@angular/router';
 export class GiftComponent implements OnChanges {
   router = inject(Router)
   giftSrv: GiftService = inject(GiftService);
+  busketSrv = inject(BusketService);
   list$ = this.giftSrv.getAll();
+   busket: BusketModel = {};
+    user: any = {};
+    ngOnInit() {
+      this.user = localStorage.getItem('user');
+      if (this.user) {
+        console.log(this.user.id);
+        this.user = JSON.parse(this.user);
+        this.getByUserId(this.user.id);
+      }
+    }
+    getByUserId(userId: string) {
+      this.busketSrv.getByUserId(userId).subscribe(b => {
+        this.busket = b;
+        console.log(this.busket);
+      });
+    }
   draftGift: GiftModel = {
     id: 0,
     name: '',
@@ -67,6 +87,18 @@ export class GiftComponent implements OnChanges {
     this.giftSrv.delete(id).subscribe(g => {
       this.refreshList();
     })
+  }
+  ticket: TicketModel = {};
+  addGiftToBusket(giftId: number) {
+    this.ticket = {giftId, busketId: this.busket.id!};
+    this.busketSrv.addTicket(this.ticket).subscribe(() => {
+      //this.router.navigate([`busket/${busketId}`]);
+    });
+  }
+  deleteGiftFromBusket(busketId: number, ticketId: number) {
+    this.busketSrv.deleteTicket(busketId, ticketId).subscribe(() => {
+      //this.router.navigate([`busket/${busketId}`]);
+    });
   }
   filter(name?: string, categoryId?: number, donorId?: string, buyerCount?: number) {
     this.list$ = this.giftSrv.filter(name, categoryId, donorId, buyerCount);

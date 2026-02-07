@@ -35,5 +35,6 @@ namespace server.DTOs
         public string? Email { get; set; }
         [Phone]
         public string PhoneNumber { get; set; }
+        public string Role { get; set; }
     }
 }

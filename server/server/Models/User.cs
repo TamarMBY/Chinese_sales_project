@@ -10,6 +10,7 @@ namespace server.Models
         public string Password { get; set; }
         public string? Email { get; set; }
         public string PhoneNumber { get; set; }
+        public string Role { get; set; }
         public ICollection<Purchase> Purchases { get; set; } = new List<Purchase>();
         public ICollection<Gift> WonGifts { get; set; } = new List<Gift>();
     }

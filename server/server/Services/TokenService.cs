@@ -7,7 +7,7 @@ namespace StoreApi.Services;
 
 public interface ITokenService
 {
-    string GenerateToken(string userId, string userName, string email);
+    string GenerateToken(string userId, string userName, string email, string role);
 }
 
 public class TokenService : ITokenService
@@ -19,7 +19,7 @@ public class TokenService : ITokenService
         _configuration = configuration;
         _logger = logger;
     }
-    public string GenerateToken(string userId, string userName, string email)
+    public string GenerateToken(string userId, string userName, string email, string role)
     {
         _logger.LogInformation("Post/ generate token called for user {UserId}", userId);
         try
@@ -39,7 +39,8 @@ public class TokenService : ITokenService
                 new Claim(JwtRegisteredClaimNames.Name, userName),
                 new Claim(JwtRegisteredClaimNames.Email, email),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(ClaimTypes.NameIdentifier, userId.ToString())
+                new Claim(ClaimTypes.NameIdentifier, userId.ToString()),
+                new Claim(ClaimTypes.Role,role)
             };
 
             var token = new JwtSecurityToken(

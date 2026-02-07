@@ -16,5 +16,6 @@ namespace server.Interfaces
         Task<PurchaseRespnseDto> DeletePackageFromPurchase(int purchaseId, int packageId);
         Task<PurchaseRespnseDto> AddTicketToPurchase(TicketCreateDto tCrateDto);
         Task<PurchaseRespnseDto> DeleteTicket(int purchaseId, int ticketId);
+        Task<PurchaseRespnseDto> CompletionPurchase(int purchaseId, PurchaseUpdateDto purchase);
     }
 }

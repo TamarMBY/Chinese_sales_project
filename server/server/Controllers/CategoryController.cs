@@ -38,6 +38,7 @@ namespace server.Controllers
             return Ok(category);
         }
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ProducesResponseType(typeof(CategoryResponseDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> AddCategkory([FromBody] CategoryCreateDto createDto)
@@ -53,6 +54,7 @@ namespace server.Controllers
             }
         }
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         [ProducesResponseType(typeof(CategoryResponseDto), StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteCategory(int id)
@@ -65,6 +67,7 @@ namespace server.Controllers
             return NoContent();
         }
         [HttpPut("{categoryId}")]
+        [Authorize(Roles = "Admin")]
         [ProducesResponseType(typeof(CategoryResponseDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> UpdateCategory([FromRoute] int categoryId,[FromBody] CategoryUpdateDto updateDto)

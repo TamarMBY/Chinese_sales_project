@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using server.DTOs;
 using server.Interfaces;
@@ -9,6 +10,7 @@ namespace server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class PurchaseController : ControllerBase
     {
         private readonly IPurchaseService _purchaseService;
@@ -19,6 +21,7 @@ namespace server.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         [ProducesResponseType(typeof(IEnumerable<PurchaseRespnseDto>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<PurchaseRespnseDto>>> GetAll()
         {
@@ -50,6 +53,7 @@ namespace server.Controllers
             return Ok(purchase);
         }
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ProducesResponseType(typeof(PurchaseRespnseDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> AddPurchase([FromBody] PurchaseCreateDto createDto)
@@ -65,6 +69,7 @@ namespace server.Controllers
             }
         }
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         [ProducesResponseType(typeof(PurchaseRespnseDto), StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeletePurchase(int id)
@@ -77,6 +82,7 @@ namespace server.Controllers
             return NoContent();
         }
         [HttpPut("{purchaseId}")]
+        [Authorize(Roles = "Admin")]
         [ProducesResponseType(typeof(PurchaseRespnseDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> UpdatePurchase([FromRoute] int purchaseId,[FromBody] PurchaseUpdateDto updateDto)
@@ -142,6 +148,19 @@ namespace server.Controllers
             if (reasult == null)
             {
                 return NotFound(new { message = $"Ticket with Id {ticketId} not found" });
+            }
+            return NoContent();
+        }
+        [HttpPut("completePurchase/{purchaseId}")]
+        [ProducesResponseType(typeof(PurchaseRespnseDto), StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> CompletionPurchase([FromRoute] int purchaseId, [FromBody] PurchaseUpdateDto purchase)
+        {
+            var result = await _purchaseService.CompletionPurchase(purchaseId, purchase);
+
+            if (result == null)
+            {
+                return NotFound(new { message = $"complet purchase faild" });
             }
             return NoContent();
         }

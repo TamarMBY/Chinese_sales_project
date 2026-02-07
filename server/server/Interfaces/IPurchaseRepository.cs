@@ -10,7 +10,7 @@ namespace server.Interfaces
         Task<Purchase> AddPurchase(Purchase purchase);
         Task<Purchase> UpdatePurchase(Purchase purchase);
         Task<bool> DeletePurchase(int id);
-        Task<Purchase> AddPackageToPurchase(int purchaseId, Package package);
+        Task<Purchase> AddPackageToPurchase(int purchaseId, int packageId);
         Task<Purchase> DeletePackageFromPurchase(int purchaseId, int packageId);
         Task<Purchase> AddTicketToPurchase(Ticket ticket);
         Task<Purchase> DeleteTicket (int purchaseId, int ticketId);

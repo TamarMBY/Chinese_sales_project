@@ -1,4 +1,5 @@
-﻿using server.DTOs;
+﻿using Serilog;
+using server.DTOs;
 using server.Interfaces;
 using server.Models;
 
@@ -10,20 +11,20 @@ public class UserService : IUserService
     private readonly IUserRepository _userRepository;
     private readonly ITokenService _tokenService;
     private readonly IConfiguration _configuration;
-    private readonly IPurchaseService _purchaseServise;
+    private readonly IPurchaseRepository _purchaseRepository;
     private readonly ILogger<UserService> _logger;
 
     public UserService(
         IUserRepository userRepository,
         ITokenService tokenService,
         IConfiguration configuration,
-        IPurchaseService purchaseService,
+        IPurchaseRepository purchaseRepository,
         ILogger<UserService> logger)
     {
         _userRepository = userRepository;
         _tokenService = tokenService;
         _configuration = configuration;
-        _purchaseServise = purchaseService;
+        _purchaseRepository = purchaseRepository;
         _logger = logger;
     }
 
@@ -74,15 +75,16 @@ public class UserService : IUserService
                 UserName = createDto.UserName,
                 Email = createDto.Email,
                 Password = HashPassword(createDto.Password),
-                PhoneNumber = createDto.PhoneNumber
-
+                PhoneNumber = createDto.PhoneNumber,
+                Role = "User"
             };
             var createdUser = await _userRepository.AddUser(user);
             _logger.LogInformation("User created with ID: {UserId}", createdUser.Id);
-            var purchase = await _purchaseServise.AddPurchase(new PurchaseCreateDto
+            var purchase = await _purchaseRepository.AddPurchase(new Purchase
             {
                 BuyerId = createdUser.Id
             });
+            
             return MapToResponseDto(createdUser);
         }
         catch (Exception ex)
@@ -156,7 +158,7 @@ public class UserService : IUserService
                 _logger.LogWarning("Login attempt failed: Invalid password for userName {UserName}", userName);
                 return null;
             }
-            var token = _tokenService.GenerateToken(user.Id, user.Email, user.UserName);
+            var token = _tokenService.GenerateToken(user.Id, user.Email, user.UserName, user.Role);
             var expiryMinutes = _configuration.GetValue<int>("JwtSettings:ExpiryMinutes", 60);
 
             _logger.LogInformation("User {UserId} authenticated successfully", user.Id);

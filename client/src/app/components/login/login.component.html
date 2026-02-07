@@ -1,8 +1,25 @@
-<p>login works!</p>
+<!-- <p>login works!</p>
 <p>register works!</p>
 <form [formGroup]="profileForm" (ngSubmit)= "login()">
     <input type="text" placeholder="שם משתמש" formControlName = UserName/>
     <input type="password" placeholder="סיסמא" formControlName = Password/>
     <button type="submit">register</button>
 </form>
-    <button (click)="logout()">logout</button>
+    <button (click)="logout()">logout</button> -->
+
+<p-toast></p-toast>
+
+<form [formGroup]="profileForm" (ngSubmit)="login()" class="flex flex-column gap-3 card">
+    <div class="flex flex-column gap-2">
+        <label for="username">שם משתמש</label>
+        <input pInputText id="username" formControlName="UserName" />
+    </div>
+
+    <div class="flex flex-column gap-2">
+        <label for="password">סיסמה</label>
+        <input pInputText type="password" id="password" formControlName="Password" />
+    </div>
+
+    <p-button label="התחבר" type="submit" [disabled]="profileForm.invalid"></p-button>
+</form>
+    

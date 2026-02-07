@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using server.DTOs;
 using server.Interfaces;
@@ -38,6 +39,7 @@ namespace server.Controllers
             return Ok(package);
         }
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ProducesResponseType(typeof(PackageResponseDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> AddPackage([FromBody] PackageCreateDto createDto)
@@ -53,6 +55,7 @@ namespace server.Controllers
             }
         }
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         [ProducesResponseType(typeof(PackageResponseDto), StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeletePackage(int id)
@@ -66,6 +69,7 @@ namespace server.Controllers
         }
 
         [HttpPut("{packageId}")]
+        [Authorize(Roles = "Admin")]
         [ProducesResponseType(typeof(PackageResponseDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> UpdatePackage([FromRoute] int packageId, [FromBody] PackageUpdateDto updateDto)

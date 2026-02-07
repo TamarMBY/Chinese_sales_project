@@ -56,11 +56,25 @@ namespace server.Repositories
             return purchase;
         }
 
-        public async Task<Purchase>AddPackageToPurchase(int purchaseId, Package package)
+        public async Task<Purchase> AddPackageToPurchase(int purchaseId, int packageId)
         {
             var purchase = await GetById(purchaseId);
             if (purchase == null) return null;
-            purchase.Packages.Add(package);
+            var existPackage = purchase.PurchasePackages.FirstOrDefault(p => p.PackageId == packageId);
+            if (existPackage != null)
+            {
+                existPackage.Quantity++;
+            }
+            else
+            {
+                var newPurchasepackage = new PurchasePackages
+                {
+                    PurchaseId = purchaseId,
+                    PackageId = packageId,
+                    Quantity = 1
+                };
+                purchase.PurchasePackages.Add(newPurchasepackage);
+            }
             await _context.SaveChangesAsync();
             return purchase;
         }
@@ -69,9 +83,17 @@ namespace server.Repositories
         {
             var purchase = await GetById(purchaseId);
             if (purchase == null) return null;
-            var existing = purchase.Packages.FirstOrDefault(p => p.Id == packageId);
-            if (existing == null) return purchase;
-            purchase.Packages.Remove(existing);
+
+            var existing = purchase.PurchasePackages.FirstOrDefault(p => p.PackageId == packageId);
+
+            if (existing != null && existing.Quantity > 0)
+            {
+                existing.Quantity--;
+            }
+            else
+            {
+                purchase.PurchasePackages.Remove(existing);
+            }
             await _context.SaveChangesAsync();
             return purchase;
         }

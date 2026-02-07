@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using server.DTOs;
 using server.Interfaces;
@@ -17,6 +18,7 @@ namespace server.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         [ProducesResponseType(typeof(IEnumerable<TicketRespnseDto>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<TicketRespnseDto>>> GetAll()
         {

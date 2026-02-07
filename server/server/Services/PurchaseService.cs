@@ -2,8 +2,10 @@
 using server.Interfaces;
 using server.Models;
 using server.Repositories;
+using StoreApi.Services;
 using System.Net.Sockets;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace server.Services
 {
@@ -11,14 +13,19 @@ namespace server.Services
     {
         private readonly IPurchaseRepository _purchaseRepository;
         private readonly ITicketService _ticketService;
+        private readonly IUserService _userService;
+        private readonly IConfiguration _configurtaion;
         private readonly ILogger<PurchaseService> _logger;
 
 
-        public PurchaseService(IPurchaseRepository purchaseRepository, ITicketService ticketService, ILogger<PurchaseService> logger)
+        public PurchaseService(IConfiguration configuration, IPurchaseRepository purchaseRepository, ITicketService ticketService, ILogger<PurchaseService> logger, IUserService userService)
         {
             _purchaseRepository = purchaseRepository;
             _ticketService = ticketService;
             _logger = logger;
+            _userService = userService;
+            _configurtaion = configuration;
+
         }
         public async Task<IEnumerable<PurchaseRespnseDto>> GetAll()
         {
@@ -131,7 +138,7 @@ namespace server.Services
                 if (purchase == null) return null;
                 if (!purchase.IsDraft)
                     throw new InvalidOperationException("Cannot modify a finalized purchase.");
-                var updated = await _purchaseRepository.AddPackageToPurchase(purchaseId, package);
+                var updated = await _purchaseRepository.AddPackageToPurchase(purchaseId, package.Id);
                 _logger.LogInformation("Package added to purchase Id {PurchaseId} successfully", purchaseId);
                 return MapToResponeseDto(updated);
             }
@@ -236,12 +243,106 @@ namespace server.Services
             };
         }
 
-        private static int GetRemainingTicketsCount(Purchase purchase)
+        private int GetRemainingTicketsCount(Purchase purchase)
         {
-            var packageCount = purchase.Packages.Sum(pkg => pkg.Quantity);
-            var ticketCount = purchase.Tickets.Sum(t => t.Quantity);
-            return packageCount - ticketCount;
+            _logger.LogInformation("GET / Get Remaining Tickets Count");
+            try
+            {
+
+                int remainingTicketsCount = purchase.PurchasePackages?
+                    .Where(pp => pp.Package != null)
+                    .Sum(pp => pp.Package.Quantity * (pp.Quantity)) ?? 0;
+                int useTicket = purchase.Tickets?.Count ?? 0;
+                int remaining = remainingTicketsCount - useTicket;
+                return remaining > 0 ? remaining : 0;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while Get Remaining Tickets Count");
+                throw;
+            }
         }
+
+        public async Task<PurchaseRespnseDto> CompletionPurchase(int purchaseId, PurchaseUpdateDto purchase)
+        {
+            _logger.LogInformation("PUT complete purchase");
+            try
+            {
+                var existPurchase = await _purchaseRepository.GetById(purchaseId);
+                var sum = existPurchase.PurchasePackages?
+                    .Where(pp => pp.Package != null)
+                    .Sum(pp => pp.Package.Price * (pp.Quantity)) ?? 0;
+
+                var updatePurchase = await UpdatePurchase(purchaseId, new PurchaseUpdateDto
+                {
+                    BuyerId = purchase.BuyerId,
+                    IsDraft = false
+                });
+
+                var user = await _userService.GetById(purchase.BuyerId);
+
+                if (user == null)
+                {
+                    throw new Exception("user does not exist");
+                }
+                else
+                {
+                    try
+                    {
+                        // ודאי איות נכון של המשתנה
+
+                        // בניית גוף המייל בצורה בטוחה
+                        var mailText = $"שלום {user.FullName}, הרכישה שלך על סך {sum} שח הושלמה בהצלחה.";
+
+                        var emailData = new
+                        {
+                            personalizations = new[]
+                        {
+                            new { to = new[] { new { email = user.Email } } }
+                        },
+                            from = new { email = "rivki0259@gmail.com" },
+                            subject = $"אישור רכישה - הזמנה {purchaseId}",
+                            content = new[]
+                            {
+                                new { type = "text/plain", value = $"שלום {user.FullName}, הרכישה שלך על סך {sum} שח הושלמה בהצלחה." }
+                            }
+                        };
+
+                        // 2. המרה ל-JSON בעזרת הספרייה המובנית
+                        var jsonPayload = System.Text.Json.JsonSerializer.Serialize(emailData);
+                        var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+
+                        using (var client = new HttpClient())
+                        {
+                            var apiKey = _configurtaion["SendGrid:ApiKey"]; // ודאי איות נכון!
+
+                            // שימי לב: "Bearer" בלי רווח בסוף!
+                            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", apiKey);
+
+                            var response = await client.PostAsync("https://api.sendgrid.com/v3/mail/send", content);
+
+                            // בדיקה מה קרה
+                            var responseBody = await response.Content.ReadAsStringAsync();
+                            _logger.LogInformation("SendGrid Status: {0}, Body: {1}", response.StatusCode, responseBody);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.LogError(ex, "Failed to send email");
+                    }
+
+                }
+
+                return updatePurchase; // או כל ערך אחר שאתה מחזיר
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while completing purchase");
+                throw;
+            }
+        }
+
 
 
     }
