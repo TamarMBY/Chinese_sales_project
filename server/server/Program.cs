@@ -11,8 +11,8 @@ using server.Services;
 using StoreApi.Services;
 using System.Text;
 
-try
-{
+//try
+//{
     Log.Information("Starting Store API application");
     var builder = WebApplication.CreateBuilder(args);
 
@@ -159,13 +159,30 @@ try
     app.MapControllers();
 
     Log.Information("Store API is now running");
-    app.Run();
-}
-catch (Exception ex)
-{
-    Log.Fatal(ex, "Application terminated unexpectedly");
-}
-finally
-{
-    Log.CloseAndFlush();
-}
+        app.Run();
+
+    //try
+    //{
+    //}
+    //catch (Exception ex)
+    //{
+    //    Console.WriteLine(ex.ToString());
+    //    throw;
+    //}
+//}
+//catch (Exception ex)
+//{
+//    Console.WriteLine("--------------------------------------------------");
+//    Console.WriteLine("CRITICAL ERROR FOUND:");
+//    Console.WriteLine(ex.Message);
+//    Console.WriteLine(ex.StackTrace);
+//    Console.WriteLine("--------------------------------------------------");
+//    Log.Fatal(ex, "Application terminated unexpectedly");
+
+//    Console.WriteLine("Press Enter to close...");
+//    Console.ReadLine();
+//}
+//finally
+//{
+//    Log.CloseAndFlush();
+//}

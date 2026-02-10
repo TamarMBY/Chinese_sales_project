@@ -129,7 +129,7 @@ namespace server.Services
             }
         }
 
-        public async Task<PurchaseRespnseDto> AddPackageToPurchase(int purchaseId, Package package)
+        public async Task<PurchaseRespnseDto> AddPackageToPurchase(int purchaseId, int packageId)
         {
             _logger.LogInformation("Post/ add package to purchase called");
             try
@@ -138,7 +138,7 @@ namespace server.Services
                 if (purchase == null) return null;
                 if (!purchase.IsDraft)
                     throw new InvalidOperationException("Cannot modify a finalized purchase.");
-                var updated = await _purchaseRepository.AddPackageToPurchase(purchaseId, package.Id);
+                var updated = await _purchaseRepository.AddPackageToPurchase(purchaseId, packageId);
                 _logger.LogInformation("Package added to purchase Id {PurchaseId} successfully", purchaseId);
                 return MapToResponeseDto(updated);
             }
@@ -158,7 +158,7 @@ namespace server.Services
                 if (purchase == null) return null;
                 if (!purchase.IsDraft)
                     throw new InvalidOperationException("Cannot modify a finalized purchase.");
-                var deleted = await _purchaseRepository.DeleteTicket(purchaseId, packageId);
+                var deleted = await _purchaseRepository.DeletePackageFromPurchase(purchaseId, packageId);
                 _logger.LogInformation("Package deleted from purchase Id {PurchaseId} successfully", purchaseId);
                 return MapToResponeseDto(deleted);
             }
@@ -240,6 +240,8 @@ namespace server.Services
                 TotalAmount = purchase.TotalAmount,
                 OrderDate = purchase.OrderDate,
                 IsDraft = purchase.IsDraft,
+                PurchasePackages = purchase.PurchasePackages,
+                Tickets = purchase.Tickets
             };
         }
 

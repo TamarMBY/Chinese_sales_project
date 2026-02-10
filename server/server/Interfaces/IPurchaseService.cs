@@ -12,7 +12,7 @@ namespace server.Interfaces
         Task<PurchaseRespnseDto> AddPurchase(PurchaseCreateDto purchase);
         Task<PurchaseRespnseDto> UpdatePurchase(int purchaseId,PurchaseUpdateDto purchase);
         Task<bool> DeletePurchase(int id);
-        Task<PurchaseRespnseDto> AddPackageToPurchase(int purchaseId, Package package);
+        Task<PurchaseRespnseDto> AddPackageToPurchase(int purchaseId, int packageId);
         Task<PurchaseRespnseDto> DeletePackageFromPurchase(int purchaseId, int packageId);
         Task<PurchaseRespnseDto> AddTicketToPurchase(TicketCreateDto tCrateDto);
         Task<PurchaseRespnseDto> DeleteTicket(int purchaseId, int ticketId);

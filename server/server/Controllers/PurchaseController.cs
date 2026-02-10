@@ -97,14 +97,14 @@ namespace server.Controllers
                 return BadRequest(new { messege = ex.Message });
             }
         }
-        [HttpPost("{purchaseId}/packages")]
+        [HttpPost("{purchaseId}/{packageId}/packages")]
         [ProducesResponseType(typeof(PurchaseRespnseDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult> AddPackageToPurchase([FromRoute] int purchaseId, [FromBody] Package package)
+        public async Task<ActionResult> AddPackageToPurchase([FromRoute] int purchaseId, [FromRoute] int packageId)
         {
             try
             {
-                var purchase = await _purchaseService.AddPackageToPurchase(purchaseId, package);
+                var purchase = await _purchaseService.AddPackageToPurchase(purchaseId, packageId);
                 return Ok(purchase);
             }
             catch (ArgumentException ex)
@@ -112,7 +112,7 @@ namespace server.Controllers
                 return BadRequest(new { messege = ex.Message });
             }
         }
-        [HttpDelete("{purchaseId}/{packageId}")]
+        [HttpDelete("deletePackage/{purchaseId}/{packageId}")]
         [ProducesResponseType(typeof(PurchaseRespnseDto), StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeletePackageFromPurchase([FromRoute] int purchaseId, [FromRoute] int packageId)

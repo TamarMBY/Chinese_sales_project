@@ -22,21 +22,6 @@ namespace server.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("PackagePurchase", b =>
-                {
-                    b.Property<int>("PackagesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PurchasesId")
-                        .HasColumnType("int");
-
-                    b.HasKey("PackagesId", "PurchasesId");
-
-                    b.HasIndex("PurchasesId");
-
-                    b.ToTable("PurchasePackages", (string)null);
-                });
-
             modelBuilder.Entity("server.Models.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -190,6 +175,24 @@ namespace server.Migrations
                     b.ToTable("Purchases");
                 });
 
+            modelBuilder.Entity("server.Models.PurchasePackages", b =>
+                {
+                    b.Property<int>("PurchaseId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PackageId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("PurchaseId", "PackageId");
+
+                    b.HasIndex("PackageId");
+
+                    b.ToTable("PurchasePackages");
+                });
+
             modelBuilder.Entity("server.Models.Ticket", b =>
                 {
                     b.Property<int>("Id")
@@ -240,6 +243,11 @@ namespace server.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -248,21 +256,6 @@ namespace server.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("PackagePurchase", b =>
-                {
-                    b.HasOne("server.Models.Package", null)
-                        .WithMany()
-                        .HasForeignKey("PackagesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("server.Models.Purchase", null)
-                        .WithMany()
-                        .HasForeignKey("PurchasesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("server.Models.Gift", b =>
@@ -302,6 +295,25 @@ namespace server.Migrations
                     b.Navigation("Buyer");
                 });
 
+            modelBuilder.Entity("server.Models.PurchasePackages", b =>
+                {
+                    b.HasOne("server.Models.Package", "Package")
+                        .WithMany("PurchasePackages")
+                        .HasForeignKey("PackageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("server.Models.Purchase", "Purchase")
+                        .WithMany("PurchasePackages")
+                        .HasForeignKey("PurchaseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Package");
+
+                    b.Navigation("Purchase");
+                });
+
             modelBuilder.Entity("server.Models.Ticket", b =>
                 {
                     b.HasOne("server.Models.Gift", "Gift")
@@ -336,8 +348,15 @@ namespace server.Migrations
                     b.Navigation("Tickets");
                 });
 
+            modelBuilder.Entity("server.Models.Package", b =>
+                {
+                    b.Navigation("PurchasePackages");
+                });
+
             modelBuilder.Entity("server.Models.Purchase", b =>
                 {
+                    b.Navigation("PurchasePackages");
+
                     b.Navigation("Tickets");
                 });
 

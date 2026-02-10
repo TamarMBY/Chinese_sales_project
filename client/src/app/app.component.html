@@ -1,4 +1,4 @@
-<nav>
+<!-- <nav>
     <a routerLink="">Home</a>
     <a routerLink="packages" routerLinkActive="active-route">Packages</a>
     <a routerLink="categories" routerLinkActive="active-route">Categories</a>
@@ -10,4 +10,44 @@
 </nav>
 <app-busket></app-busket>
 <router-outlet/>
+ -->
+<header class="header-container">
+    <div class="header-content">
+        <div class="logo-section">
+            @if(authSrv.isLoggedIn()){
+                 <button class="login-btn" (click)="authSrv.logout()">
+           התנתק
+        </button>
+            }@else {
+                <button class="login-btn" [routerLink]="['login']">
+           התחבר
+        </button>
+            }
+            
+        </div>
+        
+        <nav class="nav-menu">
+            <a *ngFor="let item of fuilterNavItems" 
+               [routerLink]="item.routerLink" 
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{ exact: true }"
+               class="nav-item">
+                {{ item.label }}
+            </a>
+        </nav>
 
+        
+    </div>
+</header>
+
+
+<div class="app-layout">
+    @if(authSrv.isLoggedIn()){
+    <aside class="app-sidebar">
+        <app-busket></app-busket>
+    </aside>
+    }
+    <main class="main-content">
+        <router-outlet />
+    </main>
+</div>

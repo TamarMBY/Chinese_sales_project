@@ -9,11 +9,11 @@ import { PackageComponent } from './components/package/package.component';
 
 export const routes: Routes = [
     // {path:'', component:Home},
-    {path: 'packages', component: PackageComponent},
-    { path: 'categories', component: CategoryComponent },
-    { path: 'gift/:id', component: GetGiftComponent },
-    { path: 'donors', component: DonorComponent },
-    { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent },
+    {path:'package',component:PackageComponent},
+    {path:'category',component:CategoryComponent},
+    {path:'gift/:id',component:GetGiftComponent},
+    {path:'donors',component:DonorComponent},
+    {path:'login',component:LoginComponent},
+    {path:'register',component:RegisterComponent},
     // {path:'logout', component:Login}
 ];

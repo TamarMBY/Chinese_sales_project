@@ -3,104 +3,64 @@
   "WorkspaceRootPath": "E:\\Chanas-sale\\project\\server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\server.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\server.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\services\\purchaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\services\\purchaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\interfaces\\ipurchaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\interfaces\\ipurchaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\controllers\\purchasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\controllers\\purchasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\repositories\\packagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\repositories\\packagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\models\\package.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\models\\package.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\models\\purchase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\models\\purchase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\interfaces\\ipurchaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\interfaces\\ipurchaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\repositories\\purchaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\repositories\\purchaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\controllers\\packagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\controllers\\packagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\controllers\\giftcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\controllers\\giftcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\controllers\\donorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\controllers\\donorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\controllers\\purchasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\controllers\\purchasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\dtos\\purchasedtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\dtos\\purchasedtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\services\\purchaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\services\\purchaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\models\\purchase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\models\\purchase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\interfaces\\ipurchaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\interfaces\\ipurchaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\dtos\\userdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\dtos\\userdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\dtos\\purchasepackagesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\dtos\\purchasepackagesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\repositories\\ticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\repositories\\ticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\dtos\\packagedtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\dtos\\packagedtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\models\\purchasepackages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\models\\purchasepackages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -110,7 +70,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -122,326 +82,215 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "server\\Properties\\launchSettings.json",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Properties\\launchSettings.json",
-              "RelativeToolTip": "server\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-04T21:40:34.768Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "server",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\server.csproj",
-              "RelativeDocumentMoniker": "server\\server.csproj",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\server.csproj",
-              "RelativeToolTip": "server\\server.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-02-04T21:40:31.008Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\appsettings.json",
-              "RelativeDocumentMoniker": "server\\appsettings.json",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\appsettings.json",
-              "RelativeToolTip": "server\\appsettings.json",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAAAC0AAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-04T21:18:59.617Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IPurchaseService.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Interfaces\\IPurchaseService.cs",
-              "RelativeDocumentMoniker": "server\\Interfaces\\IPurchaseService.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Interfaces\\IPurchaseService.cs",
-              "RelativeToolTip": "server\\Interfaces\\IPurchaseService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:55:28.274Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PurchaseController.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\PurchaseController.cs",
-              "RelativeDocumentMoniker": "server\\Controllers\\PurchaseController.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\PurchaseController.cs",
-              "RelativeToolTip": "server\\Controllers\\PurchaseController.cs",
-              "ViewState": "AgIAAJYAAAAAAAAAAAAYwJwAAABxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:46:33.869Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PackageRepository.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\PackageRepository.cs",
-              "RelativeDocumentMoniker": "server\\Repositories\\PackageRepository.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\PackageRepository.cs",
-              "RelativeToolTip": "server\\Repositories\\PackageRepository.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAuwDwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:58:43.271Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PurchaseService.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Services\\PurchaseService.cs",
-              "RelativeDocumentMoniker": "server\\Services\\PurchaseService.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Services\\PurchaseService.cs",
-              "RelativeToolTip": "server\\Services\\PurchaseService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMBAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:28:10.134Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "server\\Controllers\\UserController.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\UserController.cs",
-              "RelativeToolTip": "server\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAuwAYAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:49:26.008Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "User.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Models\\User.cs",
-              "RelativeDocumentMoniker": "server\\Models\\User.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Models\\User.cs",
-              "RelativeToolTip": "server\\Models\\User.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAgwA4AAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:31:09.813Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Purchase.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Models\\Purchase.cs",
-              "RelativeDocumentMoniker": "server\\Models\\Purchase.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Models\\Purchase.cs",
-              "RelativeToolTip": "server\\Models\\Purchase.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAzwAoAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:23:13.892Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "server\\Services\\UserService.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Services\\UserService.cs",
-              "RelativeToolTip": "server\\Services\\UserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:41:12.71Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Package.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Models\\Package.cs",
-              "RelativeDocumentMoniker": "server\\Models\\Package.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Models\\Package.cs",
-              "RelativeToolTip": "server\\Models\\Package.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAgwAkAAABnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:23:49.709Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TokenService.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Services\\TokenService.cs",
-              "RelativeDocumentMoniker": "server\\Services\\TokenService.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Services\\TokenService.cs",
-              "RelativeToolTip": "server\\Services\\TokenService.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAIwCkAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:39:34.794Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "IPurchaseRepository.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Interfaces\\IPurchaseRepository.cs",
-              "RelativeDocumentMoniker": "server\\Interfaces\\IPurchaseRepository.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Interfaces\\IPurchaseRepository.cs",
-              "RelativeToolTip": "server\\Interfaces\\IPurchaseRepository.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAQwAwAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:55:15.708Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "PurchaseRepository.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\PurchaseRepository.cs",
-              "RelativeDocumentMoniker": "server\\Repositories\\PurchaseRepository.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\PurchaseRepository.cs",
-              "RelativeToolTip": "server\\Repositories\\PurchaseRepository.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAswDoAAABWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:26:05.696Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "TicketController.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\TicketController.cs",
-              "RelativeDocumentMoniker": "server\\Controllers\\TicketController.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\TicketController.cs",
-              "RelativeToolTip": "server\\Controllers\\TicketController.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAqwBQAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:49:09.501Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "PackageController.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\PackageController.cs",
-              "RelativeDocumentMoniker": "server\\Controllers\\PackageController.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\PackageController.cs",
-              "RelativeToolTip": "server\\Controllers\\PackageController.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAowFYAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:45:50.702Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "GiftController.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\GiftController.cs",
-              "RelativeDocumentMoniker": "server\\Controllers\\GiftController.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\GiftController.cs",
-              "RelativeToolTip": "server\\Controllers\\GiftController.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAswFYAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:44:19.593Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "DonorController.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\DonorController.cs",
-              "RelativeDocumentMoniker": "server\\Controllers\\DonorController.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\DonorController.cs",
-              "RelativeToolTip": "server\\Controllers\\DonorController.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAswFcAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:43:57.134Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "server\\Controllers\\CategoryController.cs",
               "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\CategoryController.cs",
               "RelativeToolTip": "server\\Controllers\\CategoryController.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAowEUAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAA8wC4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:42:45.794Z",
+              "WhenOpened": "2026-02-08T00:12:00.446Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "UserDtos.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\DTOs\\UserDtos.cs",
-              "RelativeDocumentMoniker": "server\\DTOs\\UserDtos.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\DTOs\\UserDtos.cs",
-              "RelativeToolTip": "server\\DTOs\\UserDtos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAoAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Purchase.cs",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Models\\Purchase.cs",
+              "RelativeDocumentMoniker": "server\\Models\\Purchase.cs",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Models\\Purchase.cs",
+              "RelativeToolTip": "server\\Models\\Purchase.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAzwAYAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:41:44.121Z",
+              "WhenOpened": "2026-02-07T23:27:01.516Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "server\\Repositories\\UserRepository.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "server\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "PurchaseRepository.cs",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\PurchaseRepository.cs",
+              "RelativeDocumentMoniker": "server\\Repositories\\PurchaseRepository.cs",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\PurchaseRepository.cs",
+              "RelativeToolTip": "server\\Repositories\\PurchaseRepository.cs",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAAAGoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:31:30.622Z",
+              "WhenOpened": "2026-02-07T20:44:46.659Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 3,
+              "Title": "PurchaseController.cs",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\PurchaseController.cs",
+              "RelativeDocumentMoniker": "server\\Controllers\\PurchaseController.cs",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\PurchaseController.cs",
+              "RelativeToolTip": "server\\Controllers\\PurchaseController.cs",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAuwKAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T22:20:53.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Program.cs",
+              "RelativeDocumentMoniker": "server\\Program.cs",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Program.cs",
+              "RelativeToolTip": "server\\Program.cs",
+              "ViewState": "AgIAALUAAAAAAAAAAAAQwLgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T20:51:14.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PurchaseDtos.cs",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\DTOs\\PurchaseDtos.cs",
+              "RelativeDocumentMoniker": "server\\DTOs\\PurchaseDtos.cs",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\DTOs\\PurchaseDtos.cs",
+              "RelativeToolTip": "server\\DTOs\\PurchaseDtos.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAADwvx0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T20:41:19.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IPurchaseService.cs",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Interfaces\\IPurchaseService.cs",
+              "RelativeDocumentMoniker": "server\\Interfaces\\IPurchaseService.cs",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Interfaces\\IPurchaseService.cs",
+              "RelativeToolTip": "server\\Interfaces\\IPurchaseService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA1wA4AAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T23:37:09.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\appsettings.json",
+              "RelativeDocumentMoniker": "server\\appsettings.json",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\appsettings.json",
+              "RelativeToolTip": "server\\appsettings.json",
+              "ViewState": "AgIAABwAAAAAAAAAAAAYwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-07T20:55:01.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "server\\Services\\UserService.cs",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Services\\UserService.cs",
+              "RelativeToolTip": "server\\Services\\UserService.cs",
+              "ViewState": "AgIAAK0AAAAAAAAAAAAqwL0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T21:54:32.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "server\\Data\\ApplicationDbContext.cs",
               "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Data\\ApplicationDbContext.cs",
               "RelativeToolTip": "server\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAUwEIAAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAQwDEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:17:32.235Z",
+              "WhenOpened": "2026-02-07T22:35:33.526Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "TicketRepository.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\TicketRepository.cs",
-              "RelativeDocumentMoniker": "server\\Repositories\\TicketRepository.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\TicketRepository.cs",
-              "RelativeToolTip": "server\\Repositories\\TicketRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "UserDtos.cs",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\DTOs\\UserDtos.cs",
+              "RelativeDocumentMoniker": "server\\DTOs\\UserDtos.cs",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\DTOs\\UserDtos.cs",
+              "RelativeToolTip": "server\\DTOs\\UserDtos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:26:04.685Z",
+              "WhenOpened": "2026-02-07T23:07:50.672Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "PurchasePackages.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Models\\PurchasePackages.cs",
-              "RelativeDocumentMoniker": "server\\Models\\PurchasePackages.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Models\\PurchasePackages.cs",
-              "RelativeToolTip": "server\\Models\\PurchasePackages.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAApAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "PurchasePackagesDto.cs",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\DTOs\\PurchasePackagesDto.cs",
+              "RelativeDocumentMoniker": "server\\DTOs\\PurchasePackagesDto.cs",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\DTOs\\PurchasePackagesDto.cs",
+              "RelativeToolTip": "server\\DTOs\\PurchasePackagesDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:15:10.366Z",
+              "WhenOpened": "2026-02-07T20:43:49.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PackageDtos.cs",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\DTOs\\PackageDtos.cs",
+              "RelativeDocumentMoniker": "server\\DTOs\\PackageDtos.cs",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\DTOs\\PackageDtos.cs",
+              "RelativeToolTip": "server\\DTOs\\PackageDtos.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwA4AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T20:41:14.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "server\\Properties\\launchSettings.json",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Properties\\launchSettings.json",
+              "RelativeToolTip": "server\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-07T20:39:41.978Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "01cf0402-f796-4ceb-99de-4b954f1978da",
+        "Display": 0,
+        "X": 340,
+        "Y": 74,
+        "Width": 1202,
+        "Height": 66,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PurchaseService.cs",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Services\\PurchaseService.cs",
+              "RelativeDocumentMoniker": "server\\Services\\PurchaseService.cs",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Services\\PurchaseService.cs",
+              "RelativeToolTip": "server\\Services\\PurchaseService.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAiwHoAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T20:48:02.481Z",
               "EditorCaption": ""
             }
           ]

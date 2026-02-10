@@ -22,7 +22,9 @@ namespace server.Repositories
         public async Task<Purchase> GetById(int id)
         {
             return await _context.Purchases
-                .Include(b => b.Buyer)
+                .Include(p => p.PurchasePackages)
+                    .ThenInclude(pp => pp.Package)
+                .Include(p => p.Buyer)
                 .Include(p => p.Tickets)
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
@@ -31,6 +33,9 @@ namespace server.Repositories
             return await _context.Purchases
                 .Include(b => b.Buyer)
                 .Include(p => p.Tickets)
+                    .ThenInclude(g => g.Gift)
+                .Include(p => p.PurchasePackages)
+                    .ThenInclude(x => x.Package)
                 .FirstOrDefaultAsync(p => p.BuyerId == userId);
         }
         public async Task<Purchase> AddPurchase(Purchase purchase)
@@ -89,6 +94,9 @@ namespace server.Repositories
             if (existing != null && existing.Quantity > 0)
             {
                 existing.Quantity--;
+                if (existing.Quantity <= 0) {
+                    purchase.PurchasePackages.Remove(existing);
+                }
             }
             else
             {

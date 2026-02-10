@@ -37,11 +37,8 @@ export class AuthService {
     return !!this.token;
   }
   isAdmin():boolean{
-    const user = this.user;
-    console.log("current user"+ user.role);
-    
-    console.log(user && user.role ==='Admin');
-     return user && user.role ==='Admin'
+    const user = this.user;    
+     return user && user.role ==='Admin' 
 
   }
 }

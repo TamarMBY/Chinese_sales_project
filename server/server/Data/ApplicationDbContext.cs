@@ -13,7 +13,7 @@ namespace server.Data
         public DbSet<Purchase> Purchases { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Package> Packages { get; set; }
-        public DbSet<PurchasePackages> PurchasePakages { get; set; }
+        public DbSet<PurchasePackages> PurchasePackages { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

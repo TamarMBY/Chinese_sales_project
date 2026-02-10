@@ -89,15 +89,23 @@ export class GiftComponent implements OnChanges {
     })
   }
   ticket: TicketModel = {};
-  addGiftToBusket(giftId: number) {
-    this.ticket = {giftId, busketId: this.busket.id!};
-    this.busketSrv.addTicket(this.ticket).subscribe(() => {
-      //this.router.navigate([`busket/${busketId}`]);
+   addGift(giftId : number){
+    
+    const ticket = {
+      giftId: giftId,
+      purchaseId: this.busket.id,
+      quantity:1
+      
+    }
+
+    return this.busketSrv.addTicket(ticket).subscribe((updateBusket:BusketModel)=>{
+      console.log(updateBusket);
+      this.busket = updateBusket;
     });
   }
-  deleteGiftFromBusket(busketId: number, ticketId: number) {
-    this.busketSrv.deleteTicket(busketId, ticketId).subscribe(() => {
-      //this.router.navigate([`busket/${busketId}`]);
+  deleteGift(giftId:number){
+    return this.busketSrv.deleteTicket(this.busket.id!,giftId).subscribe((updateBusket:BusketModel)=>{
+      this.busket = updateBusket;
     });
   }
   filter(name?: string, categoryId?: number, donorId?: string, buyerCount?: number) {

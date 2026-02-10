@@ -185,8 +185,8 @@ public class UserService : IUserService
             FullName = user.UserName,
             Email = user.Email,
             PhoneNumber = user.PhoneNumber,
-
-        };
+            Role = user.Role
+};
     }
     private static string HashPassword(string password)
     {

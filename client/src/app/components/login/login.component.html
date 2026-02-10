@@ -1,13 +1,4 @@
-<!-- <p>login works!</p>
-<p>register works!</p>
-<form [formGroup]="profileForm" (ngSubmit)= "login()">
-    <input type="text" placeholder="שם משתמש" formControlName = UserName/>
-    <input type="password" placeholder="סיסמא" formControlName = Password/>
-    <button type="submit">register</button>
-</form>
-    <button (click)="logout()">logout</button> -->
-
-<p-toast></p-toast>
+<!-- <p-toast></p-toast>
 
 <form [formGroup]="profileForm" (ngSubmit)="login()" class="flex flex-column gap-3 card">
     <div class="flex flex-column gap-2">
@@ -22,4 +13,37 @@
 
     <p-button label="התחבר" type="submit" [disabled]="profileForm.invalid"></p-button>
 </form>
+     -->
+<div class="login-container">
+  <div class="login-card">
+    <h1 class="login-header">היי,טוב לראות אותך!</h1>
     
+    <form [formGroup]="profileForm" (ngSubmit)="login()" class="login-form">
+      
+
+      <div class="form-group">
+        <input 
+          type="email" 
+          class="form-input" 
+          placeholder="שם משתמש"
+          formControlName="Username" />
+      </div>
+
+      <div class="form-group">
+        <input 
+          type="password" 
+          class="form-input" 
+          placeholder="סיסמא"
+          formControlName="Password" />
+      </div>
+
+      <button type="submit" class="submit-btn">התחבר </button>
+      @if(showUserNotFound()){
+        <div class="error-message">
+            המשתמש לא קיים במערכת
+            <a routerLink="/register" class="register-link">להרשמה</a>
+        </div>
+      }
+    </form>
+  </div>
+</div>
