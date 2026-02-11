@@ -193,8 +193,4 @@ public class UserService : IUserService
         return Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(password));
     }
 
-    //public async Task<UserResponseDto> GetByUserName(string name)
-    //{
-    //    throw new NotImplementedException();
-    //}
 }

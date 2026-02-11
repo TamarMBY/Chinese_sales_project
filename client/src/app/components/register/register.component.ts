@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,6 +11,7 @@ import { AuthService } from '../../auth/auth.service';
 })
 export class RegisterComponent {
   authSrv: AuthService = inject(AuthService);
+  router = inject(Router);
   profileForm = new FormGroup({
     Id: new FormControl(''),
     FullName: new FormControl(''),
@@ -21,5 +23,6 @@ export class RegisterComponent {
   register() {
     console.log(this.profileForm.value);
     this.authSrv.register(this.profileForm.value).subscribe();
+    this.router.navigate(['/packages']);
   }
 }

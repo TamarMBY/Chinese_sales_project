@@ -38,7 +38,7 @@ namespace server.Controllers
             return Ok(gift);
         }
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [ProducesResponseType(typeof(GiftRespnseDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> AddGift([FromBody] GiftCreateDto createDto)
@@ -67,7 +67,7 @@ namespace server.Controllers
             return NoContent();
         }
         [HttpPut("{giftId}")]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [ProducesResponseType(typeof(GiftRespnseDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> UpdateGift([FromRoute] int giftId,[FromBody] GiftUpdateDto updateDto)

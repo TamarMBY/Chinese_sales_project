@@ -20,7 +20,7 @@ export class GiftService {
     console.log(item);
     return this.http.post<GiftModel>(this.BASE_URL, item)
   }
-  update(id: number, item: GiftModel): Observable<GiftModel> {
+  update(id: number, item: any): Observable<GiftModel> {
     return this.http.put<GiftModel>(this.BASE_URL + `/${id}`, item);
   }
   delete(id: number) {
@@ -35,6 +35,6 @@ export class GiftService {
     return this.http.get<GiftModel[]>(this.BASE_URL + '/filterGifts', {params});
   }
   lottery(giftId: number): Observable<void> {
-    return this.http.post<void>(this.BASE_URL + `/lottery/${giftId}`, {});
+    return this.http.put<void>(this.BASE_URL + `/lottery/${giftId}`, {});
   }
 }

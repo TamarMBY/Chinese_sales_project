@@ -1,0 +1,18 @@
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.btn{
+    background-color: #e53935;
+    border: #9e0d0a;
+}
+.btn:hover {
+    background-color: #9e0d0a;
+    border: #640807;
+    background:#9e0d0a;
+}
+.p-button:hover{
+    background-color: #e53935;
+    border: #9e0d0a;
+}

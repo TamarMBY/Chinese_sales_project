@@ -1,5 +1,4 @@
 <p>category works!</p>
-<!-- List -->
 <button type="button" (click)="getById(undefined!)">Refresh List</button>
 @for (c of (list$ | async); track c.id) {
 <div>
@@ -11,7 +10,6 @@
 }
 
 <hr />
-<!-- Form -->
 <input [(ngModel)]="draftCategory.name" placeholder="name">
 <input [(ngModel)]="draftCategory.description" placeholder="description">
 

@@ -12,9 +12,9 @@
         public string DonorId { get; set; } = string.Empty;
         public string? WinnerId { get; set; }
         public bool IsDrawn { get; set; } = false;
-        public virtual Category Category { get; set; } = null!;
-        public virtual Donor Donor { get; set; } = null!;
-        public virtual User? Winner { get; set; }
+        public Category Category { get; set; } = null!;
+        public Donor Donor { get; set; } = null!;
+        public User? Winner { get; set; }
         public ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
 
     }

@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using server.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace server.DTOs
 {
@@ -12,6 +14,7 @@ namespace server.DTOs
             // Foreign Keys
             public int CategoryId { get; set; }
             public string DonorId { get; set; } = string.Empty;
+            public Donor? Donor { get; set; }
             public string? WinnerId { get; set; }
             public bool IsDrawn { get; set; } = false;
         }
@@ -28,8 +31,9 @@ namespace server.DTOs
             public int CategoryId { get; set; }
             [Required]
             public string DonorId { get; set; } = string.Empty;
-        }
-        public class GiftUpdateDto
+        public Donor? Donor { get; set; }
+    }
+    public class GiftUpdateDto
         {
             public string Name { get; set; } = string.Empty;
             public string? Description { get; set; }

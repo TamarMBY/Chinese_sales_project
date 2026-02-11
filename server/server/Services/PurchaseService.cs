@@ -14,16 +14,18 @@ namespace server.Services
         private readonly IPurchaseRepository _purchaseRepository;
         private readonly ITicketService _ticketService;
         private readonly IUserService _userService;
+        private readonly IUserRepository _userRepository;
         private readonly IConfiguration _configurtaion;
         private readonly ILogger<PurchaseService> _logger;
+        private object PurchaseCreateDto;
 
-
-        public PurchaseService(IConfiguration configuration, IPurchaseRepository purchaseRepository, ITicketService ticketService, ILogger<PurchaseService> logger, IUserService userService)
+        public PurchaseService(IConfiguration configuration, IPurchaseRepository purchaseRepository, ITicketService ticketService, ILogger<PurchaseService> logger, IUserService userService, IUserRepository userRepository)
         {
             _purchaseRepository = purchaseRepository;
             _ticketService = ticketService;
             _logger = logger;
             _userService = userService;
+            _userRepository = userRepository;
             _configurtaion = configuration;
 
         }
@@ -302,7 +304,7 @@ namespace server.Services
                         {
                             new { to = new[] { new { email = user.Email } } }
                         },
-                            from = new { email = "rivki0259@gmail.com" },
+                            from = new { email = "tamar48719@gmail.com" },
                             subject = $"אישור רכישה - הזמנה {purchaseId}",
                             content = new[]
                             {
@@ -327,6 +329,7 @@ namespace server.Services
                             var responseBody = await response.Content.ReadAsStringAsync();
                             _logger.LogInformation("SendGrid Status: {0}, Body: {1}", response.StatusCode, responseBody);
                         }
+                        
 
                     }
                     catch (Exception ex)
@@ -345,7 +348,14 @@ namespace server.Services
             }
         }
 
-
-
+        public async void contactNewPurchase(string userId)
+        {
+            var thisUser = await _userRepository.GetById(userId);
+            var purchase = await _purchaseRepository.AddPurchase(new Purchase
+            {
+                BuyerId = userId
+            });
+            thisUser.Purchases.Add(purchase);            
+        }
     }
 }

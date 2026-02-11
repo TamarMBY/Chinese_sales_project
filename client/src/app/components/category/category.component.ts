@@ -4,9 +4,13 @@ import { CategoryModel } from '../../models/category.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { GiftComponent } from "../gift/gift.component";
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+import { ChipModule } from 'primeng/chip';
+import { InputTextModule } from 'primeng/inputtext';
 @Component({
   selector: 'app-category',
-  imports: [CommonModule, FormsModule, GiftComponent, GiftComponent],
+  imports: [CommonModule, FormsModule, GiftComponent, GiftComponent,ButtonModule,CardModule,ChipModule,InputTextModule],
   templateUrl: './category.component.html',
   styleUrl: './category.component.css'
 })

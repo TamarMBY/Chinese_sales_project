@@ -1,11 +1,11 @@
 <p>gift works!</p>
 <!-- Filter -->
 <div>
-    <input #nameInput type="text" placeholder="Name" />
-    <input #categoryIdInput type="number" placeholder="Category ID" />
-    <input #donorIdInput type="text" placeholder="Donor ID" />
-    <input #buyerCountInput type="number" placeholder="Buyer Count" />
-    <button type="button" (click)="
+  <input #nameInput type="text" placeholder="Name" />
+  <input #categoryIdInput type="number" placeholder="Category ID" />
+  <input #donorIdInput type="text" placeholder="Donor ID" />
+  <input #buyerCountInput type="number" placeholder="Buyer Count" />
+  <button type="button" (click)="
         filter(
             nameInput.value,
             categoryIdInput.value ? +categoryIdInput.value : undefined,
@@ -13,24 +13,29 @@
             buyerCountInput.value ? +buyerCountInput.value : undefined
         )
   ">
-        Filter
-    </button>
-    <button type="button" (click)="refreshList()">Clear Filters</button>
+    Filter
+  </button>
+  <button type="button" (click)="refreshList()">Clear Filters</button>
 </div>
 <hr />
+<p-button label="הגרלה על כל המתנות" icon="pi pi-replay" severity="danger" (onClick)="lotteryAllGifts()">
+</p-button>
 <!-- List -->
 @for (g of (list$ | async); track g.id) {
-  <div>
-    <button (click)="getById(g.id!)">{{ g.name }}</button>
+<div>
+  <button (click)="getById(g.id!)">{{ g.name }}</button>
 
-    <button type="button" (click)="openEdit(g)">Edit</button>
-    <button type="button" (click)="delete(g.id!)">Delete</button>
-
-   <button (click)="addGift(g.id!)">+</button>
-  <span></span>
-  <button (click)="deleteGift(g.id!)">-</button>
-    <!-- <button type="button" (click)="lottery(g.id!)">Lottery</button> -->
-  </div>
+  <button type="button" (click)="openEdit(g)">Edit</button>
+  <button type="button" (click)="delete(g.id!)">Delete</button>
+  <button type="button" (click)="lottery(g.id!)">Lottery</button>
+  @if(g.donor?.logoUrl) {
+  <img [src]="g.donor?.logoUrl" alt="Donor Logo" width="50" height="50">
+  }
+  <span>{{g.donor?.name}}</span>
+  <button (click)="addTicket(g.id!)">+</button>
+  <button (click)="deleteTicket(g.id!)">-</button>
+  <!-- <button type="button" (click)="lottery(g.id!)">Lottery</button> -->
+</div>
 }
 <hr />
 <!-- Form -->
@@ -38,7 +43,7 @@
 <input [(ngModel)]="draftGift.name" placeholder="name">
 <input [(ngModel)]="draftGift.description" placeholder="description">
 <input [(ngModel)]="draftGift.imageUrl" placeholder="image url">
-<input [(ngModel)]="draftGift.categoryId" placeholder="category id" >
+<input [(ngModel)]="draftGift.categoryId" placeholder="category id">
 <!-- <select >
     @for c of (categories$ | async); track c.id {
         <option [value]="c.id" [selected]="c.id === draftGift.categoryId">{{ c.name }}</option>
@@ -46,8 +51,8 @@
 </select> -->
 <input [(ngModel)]="draftGift.donorId" placeholder="donor id">
 <button type="button" (click)="save()">
-  {{ isEditMode ? 'Update' : 'Add' }}   
+  {{ isEditMode ? 'Update' : 'Add' }}
 </button>
 <button type="button" (click)="resetForm()" *ngIf="isEditMode">
   Cancel
-</button> 
+</button>

@@ -36,6 +36,7 @@ namespace server.Repositories
                     .ThenInclude(g => g.Gift)
                 .Include(p => p.PurchasePackages)
                     .ThenInclude(x => x.Package)
+                //.OrderByDescending(p => p.Id) // ממיין מהחדש לישן
                 .FirstOrDefaultAsync(p => p.BuyerId == userId);
         }
         public async Task<Purchase> AddPurchase(Purchase purchase)

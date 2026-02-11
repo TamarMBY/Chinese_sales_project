@@ -1,3 +1,5 @@
+import { DonorModel } from "./donor.model";
+
 export class GiftModel {
     id?: number;
     name?: string;
@@ -7,6 +9,7 @@ export class GiftModel {
 
     categoryId?: number;
     donorId?: string;
+    donor?: DonorModel;
     winnerId?: string
     isDrawn?: boolean;
 }

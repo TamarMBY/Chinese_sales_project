@@ -1,4 +1,4 @@
-<!-- Filter -->
+<!-- Filter
 <div>
   <input #nameInput type="text" placeholder="Name" />
   <input #emailInput type="text" placeholder="Email" />
@@ -20,7 +20,6 @@
 
 <hr />
 
-<!-- List -->
 @for (d of (list$ | async); track d.id) {
   <div>
     <span>{{ d.name }}</span>
@@ -32,7 +31,6 @@
 
 <hr />
 
-<!-- Form -->
 <input [(ngModel)]="draftDonor.id" placeholder="tz (id)">
 <input [(ngModel)]="draftDonor.name" placeholder="name">
 <input [(ngModel)]="draftDonor.phoneNumber" placeholder="phone">
@@ -45,4 +43,114 @@
 
 <button type="button" (click)="resetForm()" *ngIf="isEditMode">
   Cancel
-</button>
+</button> -->
+
+<div class="surface-0 p-4">
+
+  <!-- Title -->
+  <h2 class="text-3xl font-bold mb-4">ניהול תורמים</h2>
+
+  <!-- Filter Card -->
+  <p-card class="mb-4">
+    <div class="flex flex-wrap gap-2 align-items-center">
+
+      <span class="p-input-icon-left">
+        <i class="pi pi-user"></i>
+        <input pInputText #nameInput placeholder="שם תורם" />
+      </span>
+
+      <span class="p-input-icon-left">
+        <i class="pi pi-envelope"></i>
+        <input pInputText #emailInput placeholder="אימייל" />
+      </span>
+
+      <span class="p-input-icon-left">
+        <i class="pi pi-gift"></i>
+        <input pInputText type="number" #giftIdInput placeholder="Gift ID" />
+      </span>
+
+      <button pButton class="btn" icon="pi pi-filter" label="סינון" (click)="
+          filter(
+            nameInput.value,
+            emailInput.value,
+            giftIdInput.value ? +giftIdInput.value : undefined
+          )
+        "></button>
+
+      <button pButton label="נקה" class="p-button-secondary" (click)="refreshList()"></button>
+
+    </div>
+  </p-card>
+  <!-- Form -->
+  <p-card>
+    <h3 class="mb-3">{{ isEditMode ? 'עריכת תורם' : 'הוספת תורם' }}</h3>
+
+    <div class="grid">
+
+      <div class="col-12 md:col-6">
+        <label>ID</label>
+        <input pInputText [(ngModel)]="draftDonor.id" />
+      </div>
+
+      <div class="col-12 md:col-6">
+        <label>שם</label>
+        <input pInputText [(ngModel)]="draftDonor.name" />
+      </div>
+
+      <div class="col-12 md:col-6">
+        <label>טלפון</label>
+        <input pInputText [(ngModel)]="draftDonor.phoneNumber" />
+      </div>
+
+      <div class="col-12 md:col-6">
+        <label>אימייל</label>
+        <input pInputText [(ngModel)]="draftDonor.email" />
+      </div>
+
+      <div class="col-12">
+        <label>Logo URL</label>
+        <input pInputText [(ngModel)]="draftDonor.logoUrl" />
+      </div>
+
+    </div>
+
+    <div class="flex gap-2 mt-3">
+      <button pButton class="btn" [label]="isEditMode ? 'עדכן' : 'הוסף'" icon="pi pi-check" (click)="save()"></button>
+
+      <button *ngIf="isEditMode" pButton label="ביטול" icon="pi pi-times" class="p-button-secondary"
+        (click)="resetForm()"></button>
+    </div>
+
+  </p-card>
+
+  <!-- List -->
+  <p-card class="mb-4">
+    <ng-container *ngIf="list$ | async as donors; else empty">
+
+      <div class="flex flex-column gap-2">
+        @for (d of donors; track d.id) {
+        <div class="flex justify-content-between align-items-center p-2 border-round surface-100">
+
+          <div class="flex align-items-center gap-2">
+            <img *ngIf="d.logoUrl" [src]="d.logoUrl" width="40" height="40" class="border-circle" />
+            <span class="font-semibold">{{ d.name }}</span>
+          </div>
+
+          <div class="flex gap-2">
+            <button pButton icon="pi pi-pencil" class="p-button-sm btn" (click)="openEdit(d)">עריכה</button>
+
+            <button pButton icon="pi pi-trash" class="p-button-sm p-button-danger btn" (click)="delete(d.id!)">מחיקה</button>
+          </div>
+
+        </div>
+        }
+      </div>
+
+    </ng-container>
+
+    <ng-template #empty>
+      <p class="text-center text-600">אין תורמים להצגה</p>
+    </ng-template>
+  </p-card>
+
+</div>

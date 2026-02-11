@@ -4,10 +4,13 @@ import { FormsModule } from '@angular/forms';
 
 import { DonorService } from '../../services/donor.service';
 import { DonorModel } from '../../models/donor.model';
+import { CardModule } from 'primeng/card';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-donor',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,CardModule,InputTextModule,ButtonModule],
   templateUrl: './donor.component.html',
   styleUrl: './donor.component.css'
 })

@@ -17,6 +17,7 @@ namespace server.Repositories
         public async Task<IEnumerable<Gift>> GetAll()
         {
             return await _context.Gifts
+                .Include(g => g.Donor)
                          .ToListAsync();
         }
         public async Task<Gift> GetById(int id)
@@ -25,7 +26,9 @@ namespace server.Repositories
             .Where(g => g.Id == id)
             .Include(g => g.Tickets.Where(t => !t.Purchase.IsDraft))
                 .ThenInclude(t => t.Purchase)
+            .Include(g => g.Donor)
             .FirstOrDefaultAsync();
+
         }
         public async Task<Gift> AddGift(Gift gift)
         {

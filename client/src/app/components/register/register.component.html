@@ -1,4 +1,4 @@
-<p>register works!</p>
+<!-- <p>register works!</p>
 <form [formGroup]="profileForm" (ngSubmit)= "register()">
     <input type="text" placeholder="ת.ז."  formControlName = Id/>
     <input type="text" placeholder="שם מלא" formControlName = FullName/>
@@ -7,4 +7,67 @@
     <input type="email" placeholder="אימייל" formControlName = Email/>
     <input type="text" placeholder="פלפון" formControlName = PhoneNumber/>
     <button type="submit">register</button>
-</form>
+</form> -->
+
+
+<div class="register-container">
+  <div class="register-card">
+    <h1 class="register-header">היי,טוב לראות אותך!</h1>
+    
+    <form [formGroup]="profileForm" (ngSubmit)="register()" class="register-form">
+      
+
+      <div class="form-group">
+        <input 
+          type="text" 
+          class="form-input" 
+          placeholder="תעודת זהות "
+          formControlName="Id" />
+      </div>
+
+      <div class="form-group">
+        <input 
+          type="text" 
+          class="form-input" 
+          placeholder="שם"
+          formControlName="FullName" />
+      </div>
+       <div class="form-group">
+        <input 
+          type="text" 
+          class="form-input" 
+          placeholder="שם משתמש"
+          formControlName="UserName" />
+      </div>
+      <div>
+      <input 
+          type="password" 
+          class="form-input" 
+          placeholder=" סיסמא"
+          formControlName="Password" />
+      </div>
+      <div>
+       <input 
+          type="email" 
+          class="form-input" 
+          placeholder=" מייל"
+          formControlName="Email" />
+      </div>
+      <div>
+      <input 
+          type="text" 
+          class="form-input" 
+          placeholder=" טלפון"
+          formControlName="PhoneNumber" />
+      </div>
+
+      <button type="submit" class="submit-btn">הרשם </button>
+      <!-- @if(showUserNotFound()){
+        <div class="error-message">
+            המשתמש לא קיים במערכת
+            <a routerLink="/register" class="register-link">להרשמה</a>
+        </div>
+      } -->
+    </form>
+  </div>
+</div>

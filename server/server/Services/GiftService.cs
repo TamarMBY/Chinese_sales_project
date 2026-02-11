@@ -92,6 +92,7 @@ namespace server.Services
                 existingGift.ImageUrl = giftDto.ImageUrl;
                 existingGift.CategoryId = giftDto.CategoryId;
                 existingGift.DonorId = giftDto.DonorId;
+                //existingGift.Donor = giftDto.Donor;
                 if(existingGift.WinnerId != null)
                     existingGift.WinnerId = giftDto.WinnerId;
                 existingGift.IsDrawn = giftDto.IsDrawn;
@@ -157,6 +158,7 @@ namespace server.Services
                 ImageUrl = gift.ImageUrl,
                 CategoryId = gift.CategoryId,
                 DonorId = gift.DonorId,
+                Donor = gift.Donor,
                 WinnerId = gift.WinnerId,
                 IsDrawn = gift.IsDrawn
             };
