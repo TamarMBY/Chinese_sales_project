@@ -329,8 +329,10 @@ namespace server.Services
                             var responseBody = await response.Content.ReadAsStringAsync();
                             _logger.LogInformation("SendGrid Status: {0}, Body: {1}", response.StatusCode, responseBody);
                         }
-                        
-
+                        var NewPurchase = _purchaseRepository.AddPurchase(new Purchase
+                        {
+                            BuyerId = purchase.BuyerId
+                        });
                     }
                     catch (Exception ex)
                     {

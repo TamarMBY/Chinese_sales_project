@@ -22,10 +22,12 @@ namespace server.Repositories
         public async Task<Purchase> GetById(int id)
         {
             return await _context.Purchases
-                .Include(p => p.PurchasePackages)
-                    .ThenInclude(pp => pp.Package)
-                .Include(p => p.Buyer)
+                .Include(b => b.Buyer)
                 .Include(p => p.Tickets)
+                    .ThenInclude(g => g.Gift)
+                .Include(p => p.PurchasePackages)
+                    .ThenInclude(x => x.Package)
+                .OrderByDescending(p => p.Id) // ממיין מהחדש לישן
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
         public async Task<Purchase> GetByUserId(string userId)
@@ -36,7 +38,7 @@ namespace server.Repositories
                     .ThenInclude(g => g.Gift)
                 .Include(p => p.PurchasePackages)
                     .ThenInclude(x => x.Package)
-                //.OrderByDescending(p => p.Id) // ממיין מהחדש לישן
+                .OrderByDescending(p => p.Id) // ממיין מהחדש לישן
                 .FirstOrDefaultAsync(p => p.BuyerId == userId);
         }
         public async Task<Purchase> AddPurchase(Purchase purchase)

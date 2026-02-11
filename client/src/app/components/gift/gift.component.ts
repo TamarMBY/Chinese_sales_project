@@ -11,7 +11,7 @@ import { DonorService } from '../../services/donor.service';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
-import { forkJoin } from 'rxjs'; // וודא שהוספת את ה-import הזה למעלה
+import { forkJoin } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 @Component({
@@ -139,7 +139,6 @@ export class GiftComponent implements OnChanges {
       .filter(g => !g.isDrawn)
       .map(g => 
         this.giftSrv.lottery(g.id!).pipe(
-          // טיפול בשגיאה ספציפית לכל מתנה כדי שלא תפיל את כל הלולאה
           catchError(error => {
             console.error(`ההגרלה נכשלה עבור מתנה ${g.id}`, error);
             return of(null); // מחזיר Observable "ריק" כדי שהלולאה תמשיך

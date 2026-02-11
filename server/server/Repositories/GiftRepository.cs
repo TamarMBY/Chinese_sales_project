@@ -23,12 +23,10 @@ namespace server.Repositories
         public async Task<Gift> GetById(int id)
         {
             return await _context.Gifts
-            .Where(g => g.Id == id)
-            .Include(g => g.Tickets.Where(t => !t.Purchase.IsDraft))
-                .ThenInclude(t => t.Purchase)
-            .Include(g => g.Donor)
-            .FirstOrDefaultAsync();
-
+                .Include(g => g.Tickets) // טעינת כל הכרטיסים
+                    .ThenInclude(t => t.Purchase)
+                .Include(g => g.Donor)
+                .FirstOrDefaultAsync(g => g.Id == id);
         }
         public async Task<Gift> AddGift(Gift gift)
         {

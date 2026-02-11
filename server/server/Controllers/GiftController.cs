@@ -54,7 +54,7 @@ namespace server.Controllers
             }
         }
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [ProducesResponseType(typeof(GiftRespnseDto), StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteGift(int id)
@@ -83,11 +83,11 @@ namespace server.Controllers
             }
         }
 
-        [HttpPut("lottery/{giftId}")]
-        [Authorize(Roles = "Admin")]
+        [HttpPut("lottery")]
+        //[Authorize(Roles = "Admin")]
         [ProducesResponseType(typeof(GiftRespnseDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult> Lottery([FromRoute] int giftId)
+        public async Task<ActionResult> Lottery([FromBody] int giftId)
         {
             try
             {

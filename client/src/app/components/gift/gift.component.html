@@ -34,21 +34,13 @@
   <span>{{g.donor?.name}}</span>
   <button (click)="addTicket(g.id!)">+</button>
   <button (click)="deleteTicket(g.id!)">-</button>
-  <!-- <button type="button" (click)="lottery(g.id!)">Lottery</button> -->
 </div>
 }
 <hr />
-<!-- Form -->
-<!-- <input [(ngModel)]="draftGift.id" placeholder="tz (id)"> -->
 <input [(ngModel)]="draftGift.name" placeholder="name">
 <input [(ngModel)]="draftGift.description" placeholder="description">
 <input [(ngModel)]="draftGift.imageUrl" placeholder="image url">
 <input [(ngModel)]="draftGift.categoryId" placeholder="category id">
-<!-- <select >
-    @for c of (categories$ | async); track c.id {
-        <option [value]="c.id" [selected]="c.id === draftGift.categoryId">{{ c.name }}</option>
-    }
-</select> -->
 <input [(ngModel)]="draftGift.donorId" placeholder="donor id">
 <button type="button" (click)="save()">
   {{ isEditMode ? 'Update' : 'Add' }}

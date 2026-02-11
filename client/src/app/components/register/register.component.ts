@@ -22,7 +22,8 @@ export class RegisterComponent {
   });
   register() {
     console.log(this.profileForm.value);
-    this.authSrv.register(this.profileForm.value).subscribe();
-    this.router.navigate(['/packages']);
+    this.authSrv.register(this.profileForm.value).subscribe(() => {
+      this.router.navigate(['/packages']);
+    });
   }
 }
