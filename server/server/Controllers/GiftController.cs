@@ -3,7 +3,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using server.DTOs;
 using server.Interfaces;
+using server.Models;
+using server.Repositories;
 using server.Services;
+using System.Text;
 
 namespace server.Controllers
 {
@@ -109,6 +112,22 @@ namespace server.Controllers
             Console.WriteLine("aaaa");
             var gifts = await _giftService.FilterGifts(giftName, categoryId, donerName, buyersCount);
             return Ok(gifts);
+        }
+
+        [HttpGet("download-report")]
+        public async Task<IActionResult> DownloadReport()
+        {
+            try
+            {
+                byte[] reportData = await _giftService.GenerateWinnersReport();
+                string fileName = $"WinnersReport_{DateTime.Now:yyyyMMdd}.csv";
+
+                return File(reportData, "text/csv; charset=utf-8", fileName);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "אירעה שגיאה ביצירת הדוח: " + ex.Message);
+            }
         }
 
     }

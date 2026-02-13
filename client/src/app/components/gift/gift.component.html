@@ -1,5 +1,10 @@
 <p>gift works!</p>
-<!-- Filter -->
+
+<div *ngIf="errorMessage" style="color: white; background-color: #ef4444; padding: 1rem; border-radius: 5px; margin-bottom: 1rem;">
+  {{ errorMessage }}
+  <button (click)="errorMessage = null" style="float: left; background: none; border: none; color: white; cursor: pointer;">X</button>
+</div>
+
 <div>
   <input #nameInput type="text" placeholder="Name" />
   <input #categoryIdInput type="number" placeholder="Category ID" />
@@ -18,33 +23,70 @@
   <button type="button" (click)="refreshList()">Clear Filters</button>
 </div>
 <hr />
-<p-button label="הגרלה על כל המתנות" icon="pi pi-replay" severity="danger" (onClick)="lotteryAllGifts()">
-</p-button>
-<!-- List -->
+<button (click)="lotteryAllGifts()">הגרלה על כל המתנות</button>
 @for (g of (list$ | async); track g.id) {
 <div>
   <button (click)="getById(g.id!)">{{ g.name }}</button>
-
   <button type="button" (click)="openEdit(g)">Edit</button>
   <button type="button" (click)="delete(g.id!)">Delete</button>
-  <button type="button" (click)="lottery(g.id!)">Lottery</button>
-  @if(g.donor?.logoUrl) {
-  <img [src]="g.donor?.logoUrl" alt="Donor Logo" width="50" height="50">
+  
+  @if(!g.isDrawn){
+    <button type="button" (click)="lottery(g.id!)">Lottery</button>
   }
-  <span>{{g.donor?.name}}</span>
-  <button (click)="addTicket(g.id!)">+</button>
-  <button (click)="deleteTicket(g.id!)">-</button>
+  @else {
+    <!-- <span>{{g.winner?.fullName}}</span> -->
+  }
+
+  @if(g.donor?.logoUrl) {
+    <img [src]="g.donor?.logoUrl" alt="Donor Logo" width="50" height="50">
+  }
+  @else {
+    <span>{{g.donor?.name}}</span>
+  }
+
+  @if(!g.isDrawn){
+    <button (click)="addTicket(g.id!)">+</button>
+    <button (click)="deleteTicket(g.id!)">-</button>
+  }
 </div>
 }
+
 <hr />
-<input [(ngModel)]="draftGift.name" placeholder="name">
-<input [(ngModel)]="draftGift.description" placeholder="description">
-<input [(ngModel)]="draftGift.imageUrl" placeholder="image url">
-<input [(ngModel)]="draftGift.categoryId" placeholder="category id">
-<input [(ngModel)]="draftGift.donorId" placeholder="donor id">
-<button type="button" (click)="save()">
-  {{ isEditMode ? 'Update' : 'Add' }}
-</button>
-<button type="button" (click)="resetForm()" *ngIf="isEditMode">
-  Cancel
-</button>
+
+<form #giftForm="ngForm" (ngSubmit)="save()">
+  <div style="display: flex; flex-direction: column; gap: 10px; max-width: 300px;">
+    
+    <div>
+      <input name="name" [(ngModel)]="draftGift.name" #name="ngModel" required placeholder="Name (Required)">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" style="color: red; font-size: 12px;">
+        שם הוא שדה חובה
+      </div>
+    </div>
+
+    <input name="description" [(ngModel)]="draftGift.description" placeholder="description">
+    <input name="imageUrl" [(ngModel)]="draftGift.imageUrl" placeholder="image url">
+    <input name="categoryId" [(ngModel)]="draftGift.categoryId" type="number" placeholder="category id">
+    
+    <div>
+      <input name="donorId" [(ngModel)]="draftGift.donorId" #donor="ngModel" required placeholder="Donor ID (Required)">
+      <div *ngIf="donor.invalid && (donor.dirty || donor.touched)" style="color: red; font-size: 12px;">
+        חובה לבחור תורם
+      </div>
+    </div>
+
+    <div>
+      <input name="price" [(ngModel)]="draftGift.price" #price="ngModel" type="number" required min="1" placeholder="price">
+      <div *ngIf="price.invalid && (price.dirty || price.touched)" style="color: red; font-size: 12px;">
+        מחיר חייב להיות גדול מ-0
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="giftForm.invalid">
+      {{ isEditMode ? 'Update' : 'Add' }}
+    </button>
+    
+    <button type="button" (click)="resetForm()" *ngIf="isEditMode">
+      Cancel
+    </button>
+  </div>
+</form>

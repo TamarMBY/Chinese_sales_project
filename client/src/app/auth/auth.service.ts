@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap } from 'rxjs';
+import { DonorModel } from '../models/donor.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -8,7 +9,6 @@ export class AuthService {
   BASE_URL = 'https://localhost:7280/api/Auth';
   constructor(private http: HttpClient) { }
   register(body: any) {
-    alert("here")
     return this.http.post(`${this.BASE_URL}/register`, body);
   }
 
@@ -40,6 +40,9 @@ export class AuthService {
     const user = this.user;    
      return user && user.role ==='Admin' 
 
+  }
+  getById(id: string){
+   this.http.get<DonorModel>(`${this.BASE_URL}/${id}`);
   }
 }
 

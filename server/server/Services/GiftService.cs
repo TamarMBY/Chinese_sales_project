@@ -1,16 +1,20 @@
 ﻿using server.DTOs;
 using server.Interfaces;
 using server.Models;
+using server.Repositories;
+using System.Text;
 
 namespace server.Services
 {
     public class GiftService : IGiftService
     {
         private readonly IGiftRepository _giftRepository;
+        private readonly IPurchaseRepository _purchaseRepository;
         private readonly ILogger<GiftService> _logger;
-        public GiftService(IGiftRepository giftRepository, ILogger<GiftService> logger)
+        public GiftService(IGiftRepository giftRepository,IPurchaseRepository purchaseRepository, ILogger<GiftService> logger)
         {
             _giftRepository = giftRepository;
+            _purchaseRepository = purchaseRepository;
             _logger = logger;
         }
         public async Task<IEnumerable<GiftRespnseDto>> GetAll()
@@ -106,6 +110,20 @@ namespace server.Services
                 throw;
             }
         }
+        public async Task<IEnumerable<GiftRespnseDto>> FilterGifts(string? giftName,int? categoryId, string? donorName, int? buyersCount)
+        {
+            _logger.LogInformation("Get/ filter gifts called");
+            try
+            {
+                var gifts = await _giftRepository.FilterGifts(giftName, categoryId, donorName, buyersCount);
+                return gifts.Select(MapToResponeseDto);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error while filtering gifts");
+                throw;
+            }
+        }
         public async Task<GiftRespnseDto> Lottery(int giftId)
         {
             _logger.LogInformation("Put/ lottery gift called");
@@ -133,18 +151,46 @@ namespace server.Services
                 throw;
             }
         }
-        public async Task<IEnumerable<GiftRespnseDto>> FilterGifts(string? giftName,int? categoryId, string? donorName, int? buyersCount)
+        public async Task<byte[]> GenerateWinnersReport()
         {
-            _logger.LogInformation("Get/ filter gifts called");
-            try
+            _logger.LogInformation("Generating winners report with total revenue");
+
+            // 1. הבאת הנתונים
+            var gifts = await _giftRepository.GetAll(); //
+
+            // שליפת כל הרכישות שאינן טיוטה וסיכום ה-TotalAmount שלהן
+            // הערה: יש לוודא ש-PurchaseRepository מוזרק ב-Constructor
+            var allPurchases = await _purchaseRepository.GetAll();
+            decimal totalRevenue = allPurchases
+                .Where(p => !p.IsDraft) // רק רכישות שאינן טיוטה
+                .Sum(p => p.TotalAmount); // סיכום סך ההכנסות
+
+            using (var memoryStream = new MemoryStream())
             {
-                var gifts = await _giftRepository.FilterGifts(giftName, categoryId, donorName, buyersCount);
-                return gifts.Select(MapToResponeseDto);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error while filtering gifts");
-                throw;
+                var encoding = Encoding.UTF8;
+                await memoryStream.WriteAsync(encoding.GetPreamble(), 0, encoding.GetPreamble().Length);
+
+                using (var sw = new StreamWriter(memoryStream, encoding, leaveOpen: true))
+                {
+                    // כתיבת כותרות הטבלה
+                    await sw.WriteLineAsync("מזהה מתנה,שם מתנה,שם הזוכה,טלפון הזוכה");
+
+                    // כתיבת שורות הזוכים
+                    foreach (var gift in gifts)
+                    {
+                        if (gift.IsDrawn && gift.Winner != null) //
+                        {
+                            string line = $"{gift.Id},{gift.Name},{gift.Winner.FullName},{gift.Winner.PhoneNumber}";
+                            await sw.WriteLineAsync(line);
+                        }
+                    }
+
+                    // הוספת שורות רווח וסיכום הכנסות בתחתית
+                    await sw.WriteLineAsync(); // שורה ריקה להפרדה
+                    await sw.WriteLineAsync($",,סך כל ההכנסות:,{totalRevenue:N2} ₪");
+                }
+
+                return memoryStream.ToArray();
             }
         }
         private static GiftRespnseDto MapToResponeseDto(Gift gift)

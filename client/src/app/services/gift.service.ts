@@ -35,6 +35,6 @@ export class GiftService {
     return this.http.get<GiftModel[]>(this.BASE_URL + '/filterGifts', {params});
   }
   lottery(giftId: number): Observable<void> {
-    return this.http.put<void>(this.BASE_URL + `/lottery/${giftId}`, {});
+    return this.http.put<void>(this.BASE_URL + '/lottery', giftId);
   }
 }

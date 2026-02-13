@@ -1,4 +1,5 @@
 import { DonorModel } from "./donor.model";
+import { UserModel } from "./user.model";
 
 export class GiftModel {
     id?: number;
@@ -10,6 +11,7 @@ export class GiftModel {
     categoryId?: number;
     donorId?: string;
     donor?: DonorModel;
-    winnerId?: string
+    winnerId?: string;
+    winner?: UserModel;
     isDrawn?: boolean;
 }

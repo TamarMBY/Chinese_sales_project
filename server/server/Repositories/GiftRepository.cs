@@ -18,6 +18,7 @@ namespace server.Repositories
         {
             return await _context.Gifts
                 .Include(g => g.Donor)
+                .Include(g => g.Winner)
                          .ToListAsync();
         }
         public async Task<Gift> GetById(int id)

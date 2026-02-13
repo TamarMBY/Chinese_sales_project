@@ -12,6 +12,7 @@ namespace server.Interfaces
         Task<GiftRespnseDto> UpdateGift(int giftId,GiftUpdateDto gift);
         Task<bool> DeleteGift(int id);
         Task<GiftRespnseDto> Lottery(int giftId);
+        Task<byte[]> GenerateWinnersReport();
         Task<IEnumerable<GiftRespnseDto>> FilterGifts(string? giftName, int? categoryId, string? donorName, int? buyersCount);
     }
 }

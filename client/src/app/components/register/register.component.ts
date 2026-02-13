@@ -23,7 +23,18 @@ export class RegisterComponent {
   register() {
     console.log(this.profileForm.value);
     this.authSrv.register(this.profileForm.value).subscribe(() => {
-      this.router.navigate(['/packages']);
+      console.log("aaaa");
+      this.login();
+      this.router.navigate(['/package']);
     });
+  }
+    login() {
+      this.authSrv.login(this.profileForm.value).subscribe({
+        next: (user: any) => {
+          if(user){
+            this.router.navigate(['/']);
+          }
+        },
+      });
   }
 }

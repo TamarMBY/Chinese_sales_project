@@ -16,11 +16,11 @@ using System.Text;
     Log.Information("Starting Store API application");
     var builder = WebApplication.CreateBuilder(args);
 
-    // 1. Serilog Configuration
-    builder.Host.UseSerilog();
-
-    // 2. Add services to the container
-    builder.Services.AddControllers()
+// 1. Serilog Configuration
+builder.Host.UseSerilog((context, services, configuration) => configuration
+    .ReadFrom.Configuration(context.Configuration));
+// 2. Add services to the container
+builder.Services.AddControllers()
         .AddJsonOptions(options =>
         {
             options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
