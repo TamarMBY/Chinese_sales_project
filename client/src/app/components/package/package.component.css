@@ -1,0 +1,377 @@
+/* Add styles for package card bottom image and counter */
+.package-card-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0 1.5rem 0;
+    min-height: 140px;
+    position: relative;
+    z-index: 2;
+}
+
+.overlay-actions {
+    position: absolute;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: none;
+    z-index: 10;
+}
+
+.package-card-image-placeholder {
+    font-size: 2.5rem;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 2px 4px rgba(191,161,74,0.12));
+}
+
+.actions-group {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    justify-content: flex-end;
+}
+
+.actions-group.exact-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 5.5rem;
+}
+
+.actions-controls.pill {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 40px;
+    box-shadow: 0 2px 8px rgba(191,161,74,0.08);
+    padding: 0.3rem 1.2rem;
+    gap: 1.2rem;
+    min-width: 120px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: 1px solid #eee;
+}
+
+.action-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #bfa14a;
+    font-weight: bold;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.plus-btn {
+    color: #bfa14a;
+}
+
+.quantity-display {
+    min-width: 2.2rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2d2d2d;
+}
+
+.package-card-action-label {
+    font-size: 1.1rem;
+    color: #bfa14a;
+    font-weight: 700;
+    margin-left: 0.2rem;
+    margin-right: 0.8rem;
+    white-space: nowrap;
+}
+
+.package-card {
+    width: 340px;
+    min-height: 600px;
+    border-radius: 32px;
+    background: linear-gradient(135deg, #f7f7f7 0%, #f0e6d6 100%);
+    color: #2d2d2d;
+    box-shadow: 0 8px 32px rgba(191,161,74,0.08), 0 2px 8px rgba(0,0,0,0.04);
+    margin-bottom: 2rem;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+/* Color variations for cards */
+.package-card-0 {
+    background: linear-gradient(135deg, #ff9980 0%, #ff8a70 100%);
+    color: #fff;
+}
+
+.package-card-1 {
+    background: linear-gradient(135deg, #ff3333 0%, #e53935 100%);
+    color: #fff;
+}
+
+.package-card-2 {
+    background: linear-gradient(135deg, #1e88e5 0%, #1565c0 100%);
+    color: #fff;
+}
+
+.package-card-inner {
+    padding: 2.5rem 1.5rem 1.2rem 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+.package-card-content {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.package-card-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    opacity: 0.95;
+}
+
+.package-card-quantity {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2d2d2d;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.package-card-quantity-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #555;
+    text-align: center;
+    margin-bottom: 1.2rem;
+    opacity: 0.95;
+}
+
+.package-card-pricing {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #444;
+    text-align: center;
+    margin-bottom: 1.2rem;
+    background: #f7f7f7;
+    border-radius: 16px;
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.package-card-receive {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 0.7rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.package-card-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.2rem 0;
+    color: #333;
+    font-size: 1.05rem;
+    text-align: center;
+}
+.package-card-benefits li {
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+.benefit-icon {
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+}
+.gold-icon {
+    color: #bfa14a;
+}
+.silver-icon {
+    color: #bfc6ce;
+}
+
+.ribbon-minimal {
+    position: absolute;
+    top: 18px;
+    left: -38px;
+    background: #fff;
+    color: #bfa14a;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.2rem 2rem;
+    transform: rotate(-45deg);
+    border-radius: 6px;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(191,161,74,0.12);
+    border: 1px solid #bfa14a;
+    text-shadow: none;
+}
+
+.package-card-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2d2d2d;
+    text-align: center;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+.package-card-gift {
+    margin-top: 1.2rem;
+    color: #000000;
+    font-size: 1.1rem;
+    text-align: right;
+}
+.package-gift-label {
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+.package-card-gift ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.package-card-gift li {
+    margin-bottom: 0.2rem;
+}
+.package-admin-form {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+.package-admin-form input {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+.package-admin-form button {
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    background: #e53935;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+
+/* Package Sort Styles */
+.package-sort-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+
+.package-sort-row.left-align {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+
+.package-sort-row.right-align {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+
+.package-sort-select {
+    min-width: 280px;
+}
+
+.package-sort-select.red-theme {
+    min-width: 280px;
+}
+
+.package-sort-select.red-theme :deep(.p-select) {
+    border-radius: 50px;
+    border: 2px solid #e53935;
+    background: #fff;
+    padding: 0.5rem 1.5rem;
+}
+
+.package-sort-select.red-theme :deep(.p-select-label) {
+    color: #e53935;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.package-sort-select.red-theme :deep(.p-select-trigger) {
+    color: #e53935;
+    padding-right: 0;
+}
+
+.package-sort-select.red-theme :deep(.p-select-panel) {
+        color: #e53935;
+
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.package-sort-select.red-theme :deep(.p-select-items) {
+        color: #e53935;
+
+    padding: 0.5rem 0;
+}
+
+.package-sort-select.red-theme :deep(.p-select-item) {
+    padding: 1rem 1.5rem;
+    color: #e53935;
+    font-size: 1rem;
+    text-align: right;
+    transition: background-color 0.2s;
+}
+
+.package-sort-select.red-theme :deep(.p-select-item:hover) {
+    background-color: #f5f5f5;
+}
+
+.package-sort-select.red-theme :deep(.p-select-item.p-highlight) {
+    background-color: #e53935 !important;
+    color: #fff !important;
+}
+
+.package-cards-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}

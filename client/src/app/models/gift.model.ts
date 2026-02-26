@@ -7,6 +7,7 @@ export class GiftModel {
     description?: string;
     price?: number;
     imageUrl?: string;
+    tickets?: []
 
     categoryId?: number;
     donorId?: string;

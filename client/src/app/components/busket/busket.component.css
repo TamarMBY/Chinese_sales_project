@@ -1,0 +1,228 @@
+/* PrimeNG Card custom styles for busket */
+.busket-card {
+    background: #fcf7f5 !important;
+    border-radius: 0 0 0 30px;
+    box-shadow: 0 2px 8px rgba(220, 20, 60, 0.08);
+    padding-bottom: 0;
+}
+.busket-header {
+    background: #fff6f4;
+    border-bottom: 1px solid #f2dede;
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    text-align: center;
+}
+.busket-step {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #222;
+}
+.busket-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 0 1.5rem 0;
+}
+.busket-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 0.5rem;
+}
+.busket-subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+.busket-img {
+    width: 140px;
+    margin-bottom: 1.5rem;
+}
+.busket-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.7rem;
+    background: #fff;
+    border-top: 1px solid #f2dede;
+    padding: 1.2rem 1rem 1.2rem 1rem;
+    border-radius: 0 0 0 30px;
+}
+.busket-next-btn {
+    min-width: 110px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    margin-left: 0.7rem;
+    background: #e53935;
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 8px rgba(220, 20, 60, 0.08);
+    padding: 0.7rem 2rem;
+    transition: background 0.2s;
+}
+.busket-next-btn:hover {
+    background: #b71c1c;
+}
+.busket-footer-text {
+    font-size: 1rem;
+    color: #222;
+    margin-left: 0.5rem;
+}
+.busket-footer-icon {
+    font-size: 1.5rem;
+    color: #e53935;
+}
+
+.cart-actions-group.exact-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.cart-action-label {
+    font-size: 1.1rem;
+    color: #bfa14a;
+    font-weight: 700;
+    margin-left: 0.2rem;
+    margin-right: 0.8rem;
+    white-space: nowrap;
+}
+
+.cart-actions-controls.pill {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 40px;
+    box-shadow: 0 2px 8px rgba(191,161,74,0.08);
+    padding: 0.3rem 1.2rem;
+    gap: 1.2rem;
+    min-width: 120px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: 1px solid #eee;
+}
+
+.cart-action-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #bfa14a;
+    font-weight: bold;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.cart-quantity-display {
+    min-width: 2.2rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2d2d2d;
+}
+
+.busket-section {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 8px rgba(220, 20, 60, 0.08);
+    margin: 1.2rem 0;
+    padding: 1.2rem 1rem;
+}
+.busket-section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #e53935;
+    margin-bottom: 1rem;
+}
+.busket-package-card, .busket-gift-card, .busket-prize-card {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1rem;
+}
+.busket-package-qty-pill, .busket-gift-qty-pill, .busket-prize-qty-pill {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 40px;
+    box-shadow: 0 2px 8px rgba(191,161,74,0.08);
+    padding: 0.3rem 1.2rem;
+    gap: 1.2rem;
+    min-width: 120px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: 1px solid #eee;
+}
+.busket-package-info, .busket-gift-info {
+    flex: 1;
+}
+.busket-package-name, .busket-gift-title, .busket-prize-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 0.3rem;
+}
+.busket-package-qty, .busket-gift-desc {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 0.3rem;
+}
+.busket-package-price {
+    font-size: 1rem;
+    color: #e53935;
+    font-weight: 700;
+}
+.busket-gift-img img, .busket-prize-img img {
+    width: 60px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(220, 20, 60, 0.08);
+}
+.busket-progress-bar {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 8px rgba(220, 20, 60, 0.08);
+    margin: 1.2rem 0;
+    padding: 1.2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+}
+.busket-progress-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #e53935;
+}
+.busket-progress-count {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #222;
+}
+.busket-progress-label {
+    font-size: 1rem;
+    color: #888;
+}
+.busket-progress-track {
+    width: 100%;
+    height: 12px;
+    background: #f2dede;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 0.7rem;
+}
+.busket-progress-fill {
+    height: 100%;
+    background: #e53935;
+    border-radius: 8px;
+    transition: width 0.3s;
+}

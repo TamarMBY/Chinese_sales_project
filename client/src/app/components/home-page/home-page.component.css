@@ -1,0 +1,91 @@
+      body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #960303, rgb(162, 1, 1));
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 35px;
+            background: white;
+            color: #960303;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: #fff3e0;
+            transform: scale(1.05);
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            color: #960303;
+        }
+
+        .prizes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .prize-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 25px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .prize-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .prize-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .prize-card h3 {
+            margin: 10px 0;
+            color: #960303;
+        }
+
+        footer {
+            background: #d0c3b0;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #555;
+        }

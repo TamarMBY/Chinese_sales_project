@@ -1,92 +1,132 @@
-<p>gift works!</p>
-
-<div *ngIf="errorMessage" style="color: white; background-color: #ef4444; padding: 1rem; border-radius: 5px; margin-bottom: 1rem;">
-  {{ errorMessage }}
-  <button (click)="errorMessage = null" style="float: left; background: none; border: none; color: white; cursor: pointer;">X</button>
-</div>
-
-<div>
-  <input #nameInput type="text" placeholder="Name" />
-  <input #categoryIdInput type="number" placeholder="Category ID" />
-  <input #donorIdInput type="text" placeholder="Donor ID" />
-  <input #buyerCountInput type="number" placeholder="Buyer Count" />
-  <button type="button" (click)="
-        filter(
-            nameInput.value,
-            categoryIdInput.value ? +categoryIdInput.value : undefined,
-            donorIdInput.value,
-            buyerCountInput.value ? +buyerCountInput.value : undefined
-        )
-  ">
-    Filter
-  </button>
-  <button type="button" (click)="refreshList()">Clear Filters</button>
-</div>
-<hr />
-<button (click)="lotteryAllGifts()">הגרלה על כל המתנות</button>
-@for (g of (list$ | async); track g.id) {
-<div>
-  <button (click)="getById(g.id!)">{{ g.name }}</button>
-  <button type="button" (click)="openEdit(g)">Edit</button>
-  <button type="button" (click)="delete(g.id!)">Delete</button>
+<div class="container" dir="rtl">
   
-  @if(!g.isDrawn){
-    <button type="button" (click)="lottery(g.id!)">Lottery</button>
-  }
-  @else {
-    <!-- <span>{{g.winner?.fullName}}</span> -->
-  }
+  <div *ngIf="errorMessage" style="margin-bottom: 20px;">
+    <nz-alert nzType="error" [nzMessage]="errorMessage" nzShowIcon nzCloseable (nzOnClose)="errorMessage = null"></nz-alert>
+  </div>
 
-  @if(g.donor?.logoUrl) {
-    <img [src]="g.donor?.logoUrl" alt="Donor Logo" width="50" height="50">
-  }
-  @else {
-    <span>{{g.donor?.name}}</span>
-  }
-
-  @if(!g.isDrawn){
-    <button (click)="addTicket(g.id!)">+</button>
-    <button (click)="deleteTicket(g.id!)">-</button>
-  }
-</div>
-}
-
-<hr />
-
-<form #giftForm="ngForm" (ngSubmit)="save()">
-  <div style="display: flex; flex-direction: column; gap: 10px; max-width: 300px;">
-    
-    <div>
-      <input name="name" [(ngModel)]="draftGift.name" #name="ngModel" required placeholder="Name (Required)">
-      <div *ngIf="name.invalid && (name.dirty || name.touched)" style="color: red; font-size: 12px;">
-        שם הוא שדה חובה
-      </div>
-    </div>
-
-    <input name="description" [(ngModel)]="draftGift.description" placeholder="description">
-    <input name="imageUrl" [(ngModel)]="draftGift.imageUrl" placeholder="image url">
-    <input name="categoryId" [(ngModel)]="draftGift.categoryId" type="number" placeholder="category id">
-    
-    <div>
-      <input name="donorId" [(ngModel)]="draftGift.donorId" #donor="ngModel" required placeholder="Donor ID (Required)">
-      <div *ngIf="donor.invalid && (donor.dirty || donor.touched)" style="color: red; font-size: 12px;">
-        חובה לבחור תורם
-      </div>
-    </div>
-
-    <div>
-      <input name="price" [(ngModel)]="draftGift.price" #price="ngModel" type="number" required min="1" placeholder="price">
-      <div *ngIf="price.invalid && (price.dirty || price.touched)" style="color: red; font-size: 12px;">
-        מחיר חייב להיות גדול מ-0
-      </div>
-    </div>
-
-    <button type="submit" [disabled]="giftForm.invalid">
-      {{ isEditMode ? 'Update' : 'Add' }}
-    </button>
-    
-    <button type="button" (click)="resetForm()" *ngIf="isEditMode">
-      Cancel
+  <div class="admin-actions-top" *ngIf="authSrv.isAdmin()" style="margin-bottom: 20px;">
+    <button nz-button nzType="primary" class="gold-btn" (click)="openAddModal()">
+      <span nz-icon nzType="plus"></span> הוספת מתנה חדשה
     </button>
   </div>
-</form>
+
+  <div class="filter-section">
+    <div nz-row [nzGutter]="16" nzAlign="bottom">
+      <div nz-col [nzXs]="24" [nzSm]="6">
+        <label>שם מתנה</label>
+        <input nz-input [(ngModel)]="filterValues.name" type="text" placeholder="חיפוש לפי שם" />
+      </div>
+      <div nz-col [nzXs]="12" [nzSm]="4">
+        <label>קטגוריה</label>
+        <nz-input-number [(ngModel)]="filterValues.categoryId" [nzMin]="0" style="width: 100%"></nz-input-number>
+      </div>
+      <div nz-col [nzXs]="12" [nzSm]="5">
+        <label>ID תורם</label>
+        <input nz-input [(ngModel)]="filterValues.donorId" type="text" placeholder="חיפוש לפי תורם" />
+      </div>
+      <div nz-col [nzXs]="24" [nzSm]="9" class="filter-actions">
+        <button nz-button nzType="primary" class="gold-btn" (click)="filter()">
+          סנן
+        </button>
+        <button nz-button nzType="default" (click)="refreshList()">נקה</button>
+      </div>
+    </div>
+  </div>
+
+  <nz-divider></nz-divider>
+
+  <div nz-row [nzGutter]="[20, 20]">
+    @for (g of (list$ | async); track g.id) {
+    <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="8" [nzLg]="6">
+      <nz-card [nzCover]="coverTemplate" class="gift-card" [nzActions]="[actionEdit, actionDelete, actionLottery]">
+        <div class="card-body">
+          <h3 class="gift-title">{{ g.name }}</h3>
+          <div class="donor-info">
+             <span class="donor-name">{{ g.donor?.name || 'תורם אנונימי' }}</span>
+          </div>
+          <button nz-button nzType="primary" class="gold-btn buy-btn" (click)="getById(g.id!)">הוספה לסל</button>
+          
+          <div *ngIf="g.isDrawn" class="winner-label">
+            <span nz-icon nzType="check-circle"></span> זוכה: {{ g.winner?.fullName }}
+          </div>
+        </div>
+      </nz-card>
+
+      <ng-template #coverTemplate>
+        <div class="card-image-wrapper">
+          <img [src]="g.imageUrl || 'assets/default-gift.jpg'" />
+        </div>
+      </ng-template>
+
+      <ng-template #actionEdit>
+        <span nz-icon nzType="edit" (click)="openEdit(g)" nz-tooltip nzTooltipTitle="ערוך"></span>
+      </ng-template>
+      <ng-template #actionDelete>
+        <span nz-icon nzType="delete" (click)="delete(g.id!)" nz-tooltip nzTooltipTitle="מחק"></span>
+      </ng-template>
+      <ng-template #actionLottery>
+        <span nz-icon nzType="thunderbolt" *ngIf="!g.isDrawn" (click)="lottery(g.id!)" nz-tooltip nzTooltipTitle="בצע הגרלה"></span>
+      </ng-template>
+    </div>
+    }
+  </div>
+
+  <nz-modal
+    [(nzVisible)]="isModalVisible"
+    [nzTitle]="isEditMode ? 'עריכת מתנה' : 'הוספת מתנה חדשה'"
+    (nzOnCancel)="handleCancel()"
+    (nzOnOk)="save()"
+    [nzOkText]="isEditMode ? 'עדכן' : 'שמור'"
+    nzCancelText="ביטול"
+    [nzWidth]="600"
+  >
+    <ng-container *nzModalContent>
+      <form #giftForm="ngForm" nz-form nzLayout="vertical">
+        <div nz-row [nzGutter]="16">
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label nzRequired>שם המתנה</nz-form-label>
+              <nz-form-control nzErrorTip="שדה חובה">
+                <input nz-input name="name" [(ngModel)]="draftGift.name" required />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label nzRequired>מזהה תורם</nz-form-label>
+              <nz-form-control nzErrorTip="שדה חובה">
+                <input nz-input name="donorId" [(ngModel)]="draftGift.donorId" required />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+
+        <nz-form-item>
+          <nz-form-label>תיאור המתנה</nz-form-label>
+          <nz-form-control>
+            <textarea nz-input name="description" [(ngModel)]="draftGift.description" rows="3"></textarea>
+          </nz-form-control>
+        </nz-form-item>
+
+        <div nz-row [nzGutter]="16">
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label>קטגוריה</nz-form-label>
+              <nz-input-number name="categoryId" [(ngModel)]="draftGift.categoryId" style="width: 100%"></nz-input-number>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label nzRequired>מחיר כרטיס</nz-form-label>
+              <nz-input-number name="price" [(ngModel)]="draftGift.price" [nzMin]="1" style="width: 100%"></nz-input-number>
+            </nz-form-item>
+          </div>
+        </div>
+
+        <nz-form-item>
+          <nz-form-label>כתובת תמונה (URL)</nz-form-label>
+          <input nz-input name="imageUrl" [(ngModel)]="draftGift.imageUrl" />
+        </nz-form-item>
+      </form>
+    </ng-container>

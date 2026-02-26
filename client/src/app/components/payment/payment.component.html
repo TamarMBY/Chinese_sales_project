@@ -1,0 +1,87 @@
+<div class="payment-page flex justify-content-center align-items-center content div-container">
+
+  <!-- <p-card class="payment-card"> -->
+
+    <!-- Header -->
+    <div class="text-center mb-4">
+      <i class="pi pi-credit-card payment-icon"></i>
+      <h2 class="mt-2">תשלום מאובטח</h2>
+      <small class="text-600">דוגמה בלבד – אין חיוב אמיתי</small>
+    </div>
+
+    <div class="flex flex-column gap-3">
+
+      <!-- Card Holder -->
+      <div class="field">
+        <label>שם בעל הכרטיס</label>
+        <input
+          pInputText
+          [(ngModel)]="payment.cardHolder"
+        />
+        @if (submitted && !isCardHolderValid) {
+          <small class="error">יש להזין שם תקין</small>
+        }
+      </div>
+
+      <!-- Card Number -->
+      <div class="field">
+        <label>מספר כרטיס</label>
+        <input
+          pInputText
+          [(ngModel)]="payment.cardNumber"
+          placeholder="1234 5678 9012 3456"
+        />
+        @if (submitted && !isCardNumberValid) {
+          <small class="error">מספר כרטיס לא תקין</small>
+        }
+      </div>
+
+      <!-- Expiry + CVV -->
+      <div class="flex gap-3">
+        <div class="field flex-1">
+          <label>תוקף</label>
+          <input
+            pInputText
+            [(ngModel)]="payment.expiry"
+            placeholder="MM/YY"
+          />
+          @if (submitted && !isExpiryValid) {
+            <small class="error">פורמט לא תקין</small>
+          }
+        </div>
+
+        <div class="field flex-1">
+          <label>CVV</label>
+          <input
+            pInputText
+            [(ngModel)]="payment.cvv"
+            type="password"
+          />
+          @if (submitted && !isCvvValid) {
+            <small class="error">CVV לא תקין</small>
+          }
+        </div>
+      </div>
+
+      <!-- Pay button -->
+      <button
+        pButton
+        label="שלם"
+        icon="pi pi-lock"
+        class="p-button-lg w-full mt-2"
+        [disabled]="!isFormValid && submitted"
+        (click)="pay()"
+      ></button>
+
+      <!-- Success -->
+      @if (success) {
+        <p
+          severity="success"
+          text="התשלום בוצע בהצלחה (דמו)"
+        ></p>
+      }
+    </div>
+
+  <!-- </p-card> -->
+
+</div>

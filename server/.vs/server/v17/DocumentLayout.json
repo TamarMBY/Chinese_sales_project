@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "E:\\Chanas-sale\\project\\server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\services\\giftservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\services\\giftservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\services\\packageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\services\\packageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\controllers\\purchasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\controllers\\purchasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\interfaces\\igiftservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\interfaces\\igiftservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\repositories\\purchaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\repositories\\purchaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\repositories\\packagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\repositories\\packagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\services\\giftservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\services\\giftservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\controllers\\giftcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,14 +59,6 @@
       "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\dtos\\purchasedtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\repositories\\purchaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\repositories\\purchaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\controllers\\purchasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\controllers\\purchasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\repositories\\donorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\repositories\\donorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -55,20 +67,12 @@
       "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\interfaces\\ipurchaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\interfaces\\ipurchaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\models\\purchase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\models\\purchase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\repositories\\packagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|solutionrelative:server\\repositories\\packagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0479D469-033F-4252-977A-DE2F7A9B3182}|server\\server.csproj|e:\\chanas-sale\\project\\server\\server\\dtos\\giftdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -146,84 +150,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GiftService.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Services\\GiftService.cs",
-              "RelativeDocumentMoniker": "server\\Services\\GiftService.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Services\\GiftService.cs",
-              "RelativeToolTip": "server\\Services\\GiftService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA1AAAAAAAAAA==",
+              "Title": "PackageService.cs",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Services\\PackageService.cs",
+              "RelativeDocumentMoniker": "server\\Services\\PackageService.cs",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Services\\PackageService.cs",
+              "RelativeToolTip": "server\\Services\\PackageService.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAvwHMAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T17:15:29.127Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GiftController.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\GiftController.cs",
-              "RelativeDocumentMoniker": "server\\Controllers\\GiftController.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\GiftController.cs",
-              "RelativeToolTip": "server\\Controllers\\GiftController.cs",
-              "ViewState": "AgIAAHAAAAAAAAAAAAAmwIIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T18:28:00.976Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "PurchaseRepository.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\PurchaseRepository.cs",
-              "RelativeDocumentMoniker": "server\\Repositories\\PurchaseRepository.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\PurchaseRepository.cs",
-              "RelativeToolTip": "server\\Repositories\\PurchaseRepository.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAUwBUAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-07T20:44:46.659Z",
+              "WhenOpened": "2026-02-15T21:27:16.829Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "GiftRepository.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\GiftRepository.cs",
-              "RelativeDocumentMoniker": "server\\Repositories\\GiftRepository.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\GiftRepository.cs",
-              "RelativeToolTip": "server\\Repositories\\GiftRepository.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAADwvxQAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T18:37:51.148Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\appsettings.json",
+              "RelativeDocumentMoniker": "server\\appsettings.json",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\appsettings.json",
+              "RelativeToolTip": "server\\appsettings.json",
+              "ViewState": "AgIAADgAAAAAAAAAAAAAADgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-07T20:55:01.856Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Gift.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Models\\Gift.cs",
-              "RelativeDocumentMoniker": "server\\Models\\Gift.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Models\\Gift.cs",
-              "RelativeToolTip": "server\\Models\\Gift.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAYwBAAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T17:16:08.914Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "User.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Models\\User.cs",
-              "RelativeDocumentMoniker": "server\\Models\\User.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Models\\User.cs",
-              "RelativeToolTip": "server\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T01:22:54.016Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "IGiftService.cs",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Interfaces\\IGiftService.cs",
               "RelativeDocumentMoniker": "server\\Interfaces\\IGiftService.cs",
@@ -236,7 +188,107 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PurchaseController.cs",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\PurchaseController.cs",
+              "RelativeDocumentMoniker": "server\\Controllers\\PurchaseController.cs",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\PurchaseController.cs",
+              "RelativeToolTip": "server\\Controllers\\PurchaseController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T22:20:53.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PurchaseRepository.cs",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\PurchaseRepository.cs",
+              "RelativeDocumentMoniker": "server\\Repositories\\PurchaseRepository.cs",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\PurchaseRepository.cs",
+              "RelativeToolTip": "server\\Repositories\\PurchaseRepository.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAUwBUAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T20:44:46.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PackageRepository.cs",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\PackageRepository.cs",
+              "RelativeDocumentMoniker": "server\\Repositories\\PackageRepository.cs",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\PackageRepository.cs",
+              "RelativeToolTip": "server\\Repositories\\PackageRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAB0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T19:03:18.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Gift.cs",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Models\\Gift.cs",
+              "RelativeDocumentMoniker": "server\\Models\\Gift.cs",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Models\\Gift.cs",
+              "RelativeToolTip": "server\\Models\\Gift.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAYwBAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T17:16:08.914Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "User.cs",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Models\\User.cs",
+              "RelativeDocumentMoniker": "server\\Models\\User.cs",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Models\\User.cs",
+              "RelativeToolTip": "server\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T01:22:54.016Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "GiftController.cs",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\GiftController.cs",
+              "RelativeDocumentMoniker": "server\\Controllers\\GiftController.cs",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\GiftController.cs",
+              "RelativeToolTip": "server\\Controllers\\GiftController.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAmwIIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T18:28:00.976Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GiftService.cs",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Services\\GiftService.cs",
+              "RelativeDocumentMoniker": "server\\Services\\GiftService.cs",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Services\\GiftService.cs",
+              "RelativeToolTip": "server\\Services\\GiftService.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBAAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T17:15:29.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GiftRepository.cs",
+              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\GiftRepository.cs",
+              "RelativeDocumentMoniker": "server\\Repositories\\GiftRepository.cs",
+              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\GiftRepository.cs",
+              "RelativeToolTip": "server\\Repositories\\GiftRepository.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAADwvxQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T18:37:51.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "PurchaseService.cs",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Services\\PurchaseService.cs",
               "RelativeDocumentMoniker": "server\\Services\\PurchaseService.cs",
@@ -244,12 +296,11 @@
               "RelativeToolTip": "server\\Services\\PurchaseService.cs",
               "ViewState": "AgIAAFcBAAAAAAAAAAAmwGgBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T15:18:13.974Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T15:18:13.974Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "DonorController.cs",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\DonorController.cs",
               "RelativeDocumentMoniker": "server\\Controllers\\DonorController.cs",
@@ -257,12 +308,11 @@
               "RelativeToolTip": "server\\Controllers\\DonorController.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAQwBsAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-12T22:17:57.601Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-12T22:17:57.601Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "Purchase.cs",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Models\\Purchase.cs",
               "RelativeDocumentMoniker": "server\\Models\\Purchase.cs",
@@ -274,7 +324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "IPurchaseRepository.cs",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Interfaces\\IPurchaseRepository.cs",
               "RelativeDocumentMoniker": "server\\Interfaces\\IPurchaseRepository.cs",
@@ -286,7 +336,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "PurchaseDtos.cs",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\DTOs\\PurchaseDtos.cs",
               "RelativeDocumentMoniker": "server\\DTOs\\PurchaseDtos.cs",
@@ -294,12 +344,11 @@
               "RelativeToolTip": "server\\DTOs\\PurchaseDtos.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-07T20:41:19.24Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-07T20:41:19.24Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "DonorRepository.cs",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\DonorRepository.cs",
               "RelativeDocumentMoniker": "server\\Repositories\\DonorRepository.cs",
@@ -311,20 +360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PurchaseController.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\PurchaseController.cs",
-              "RelativeDocumentMoniker": "server\\Controllers\\PurchaseController.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\PurchaseController.cs",
-              "RelativeToolTip": "server\\Controllers\\PurchaseController.cs",
-              "ViewState": "AgIAAHMAAAAAAAAAAAAEwJgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-07T22:20:53.702Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "GiftDtos.cs",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\DTOs\\GiftDtos.cs",
               "RelativeDocumentMoniker": "server\\DTOs\\GiftDtos.cs",
@@ -336,7 +372,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Program.cs",
               "RelativeDocumentMoniker": "server\\Program.cs",
@@ -348,19 +384,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\appsettings.json",
-              "RelativeDocumentMoniker": "server\\appsettings.json",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\appsettings.json",
-              "RelativeToolTip": "server\\appsettings.json",
-              "ViewState": "AgIAACgAAAAAAAAAAAAgwD4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-07T20:55:01.856Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "TicketRepository.cs",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\TicketRepository.cs",
               "RelativeDocumentMoniker": "server\\Repositories\\TicketRepository.cs",
@@ -372,19 +396,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "PackageRepository.cs",
-              "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\PackageRepository.cs",
-              "RelativeDocumentMoniker": "server\\Repositories\\PackageRepository.cs",
-              "ToolTip": "E:\\Chanas-sale\\project\\server\\server\\Repositories\\PackageRepository.cs",
-              "RelativeToolTip": "server\\Repositories\\PackageRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T19:03:18.129Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "PurchaseService.cs",
               "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\AppData\\Local\\SourceServer\\e029e9baff22e130ec60b68553aedca6002a80de30d8ea68636ef73c5bf3bf20\\server\\server\\Services\\PurchaseService.cs",
               "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\AppData\\Local\\SourceServer\\e029e9baff22e130ec60b68553aedca6002a80de30d8ea68636ef73c5bf3bf20\\server\\server\\Services\\PurchaseService.cs [Read Only]",
@@ -395,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "dotnet",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\dotnet",
               "RelativeDocumentMoniker": "server\\dotnet",
@@ -407,7 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": ".gitignore",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\.gitignore",
               "RelativeDocumentMoniker": "server\\.gitignore",
@@ -419,7 +431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "UserDtos.cs",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\DTOs\\UserDtos.cs",
               "RelativeDocumentMoniker": "server\\DTOs\\UserDtos.cs",
@@ -431,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "UserService.cs",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "server\\Services\\UserService.cs",
@@ -443,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "PackageController.cs",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\PackageController.cs",
               "RelativeDocumentMoniker": "server\\Controllers\\PackageController.cs",
@@ -455,7 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "IPurchaseService.cs",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Interfaces\\IPurchaseService.cs",
               "RelativeDocumentMoniker": "server\\Interfaces\\IPurchaseService.cs",
@@ -467,7 +479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "server\\Controllers\\CategoryController.cs",
@@ -479,7 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "server\\Data\\ApplicationDbContext.cs",
@@ -491,7 +503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "PurchasePackagesDto.cs",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\DTOs\\PurchasePackagesDto.cs",
               "RelativeDocumentMoniker": "server\\DTOs\\PurchasePackagesDto.cs",
@@ -503,7 +515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "PackageDtos.cs",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\DTOs\\PackageDtos.cs",
               "RelativeDocumentMoniker": "server\\DTOs\\PackageDtos.cs",
@@ -515,7 +527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "launchSettings.json",
               "DocumentMoniker": "E:\\Chanas-sale\\project\\server\\server\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "server\\Properties\\launchSettings.json",

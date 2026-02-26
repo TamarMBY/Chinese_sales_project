@@ -1,0 +1,81 @@
+<!-- <p-card class="busket-card" -->
+    <!-- [style]="{width: '100%', minWidth: '320px', maxWidth: '420px', margin: '0 auto', background: '#fcf7f5'}"> -->
+    <ng-template pTemplate="header">
+        <div class="busket-header">
+            <span class="busket-step">העגלה שלי</span>
+        </div>
+    </ng-template>
+    <div *ngIf="(busket.purchasePackages?.length || 0) === 0">
+        <div class="busket-content">
+            <div class="busket-title">העגלה ריקה</div>
+            <div class="busket-subtitle">לתחילת קניה עליך לבחור חבילה</div>
+            <img src="assets/cart-icon.png" alt="עגלה ריקה" onerror="this.style.display='none'" />
+        </div>
+        <ng-template pTemplate="footer">
+            <div class="busket-footer">
+                <span class="busket-footer-text">יש לבחור חבילת כרטיסים</span>
+                <i class="pi pi-shopping-cart busket-footer-icon"></i>
+            </div>
+        </ng-template>
+    </div>
+    <div *ngIf="(busket.purchasePackages?.length || 0) > 0">
+        <div class="busket-section">
+            <div class="busket-section-title">חבילות</div>
+            <div *ngFor="let p of busket.purchasePackages">
+                <div class="busket-package-card">
+                    <div class="busket-package-info">
+                        <div class="busket-package-name"><b>{{p.package?.name}}</b></div>
+                        <div class="busket-package-qty">{{(p.package?.quantity||0)*(p.quantity ||0)}} כרטיסים</div>
+                        <div class="busket-package-price">₪{{(p.package?.price||0)*(p.quantity ||0)}}</div>
+                    </div>
+                    <div class="busket-package-qty-pill">
+                        <button class="cart-action-btn plus-btn" (click)="addPackageToCart(p.packageId!)">+</button>
+                        <div class="cart-quantity-display aristocrat-font">{{p.quantity}}</div>
+                        <button class="cart-action-btn minus-btn"
+                            (click)="removePackageFromCart(p.packageId!)">−</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="busket.tickets && busket.tickets.length > 0" class="busket-section">
+            <div class="busket-section-title">מתנות</div>
+            <div *ngFor="let t of groupTickets">
+                <div class="busket-gift-card">
+                    <div class="busket-gift-info">
+                        <div class="busket-gift-title">{{t.gift?.name}}</div>
+                    </div>
+                    @if(t.gift?.isDrawn)
+                    {
+                    <div class="busket-gift-drawn-overlay">המתנה הוגרלה</div>
+                    <button (click)="deleteGift(t.id!)">הסר מתנה</button>
+                    }
+                    @else {
+                    <div class="busket-gift-qty-pill">
+                        <button class="cart-action-btn plus-btn" (click)="addGift(t.giftId!)">+</button>
+                        <div class="cart-quantity-display aristocrat-font">{{t.totalTickets}}</div>
+                        <button class="cart-action-btn minus-btn" (click)="deleteGift(t.id!)">−</button>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="busket-progress-bar">
+            <div class="busket-progress-info">
+                <span class="busket-progress-count">{{usedTickets}} / {{totalPurchasedTickets}}</span>
+                <span class="busket-progress-label">נותרו לך למימוש</span>
+            </div>
+            <div class="busket-progress-track">
+                <div class="busket-progress-fill"
+                    [style.width.%]="totalPurchasedTickets > 0 ? (usedTickets / totalPurchasedTickets) * 100 : 0"></div>
+            </div>
+            @if(totalPurchasedTickets-usedTickets <= 0) { <button class="busket-next-btn"
+                (click)="router.navigate(['/payment',busket.id])"> לתשלום</button>
+                }
+                @else {
+                <span>עדיין לא סיימת לבחור מתנות</span>
+                }
+                <div class="busket-total-amount">סה"כ: ₪{{busket.totalAmount}}</div>
+                <div class="busket-cart-icon"><i class="pi pi-shopping-cart"></i></div>
+        </div>
+    </div>
+<!-- </p-card> -->

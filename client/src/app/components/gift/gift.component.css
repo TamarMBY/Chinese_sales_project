@@ -1,0 +1,232 @@
+.container {
+  padding: 24px;
+  background-color: #fcfaf8;
+  min-height: 100vh;
+}
+
+/* צבעי חום-זהב מותאמים לתמונה */
+.gold-btn {
+  background-color: #c29a6b !important;
+  border-color: #c29a6b !important;
+  color: white !important;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.gold-btn:hover {
+  background-color: #a8845a !important;
+  border-color: #a8845a !important;
+}
+
+.lottery-all-btn {
+  margin-bottom: 24px;
+  background-color: #4a4a4a;
+  border: none;
+  color: white;
+}
+
+/* עיצוב הכרטיסייה */
+.gift-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+  border: none;
+}
+
+.gift-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image-wrapper {
+  height: 200px;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  text-align: center;
+  padding: 12px 0;
+}
+
+.gift-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.buy-btn {
+  width: 90%;
+  margin: 10px auto;
+}
+
+.donor-logo {
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.ticket-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.ticket-count {
+  font-weight: 600;
+  color: #888;
+}
+
+.circle-btn {
+  border-color: #c29a6b;
+  color: #c29a6b;
+}
+
+.winner-label {
+  margin-top: 10px;
+  color: #52c41a;
+  font-weight: bold;
+}
+
+/* עיצוב הטופס והפילטרים */
+.filter-section {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.filter-section label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #666;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.form-container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 20px;
+  border: 1px solid #eee;
+}
+
+.form-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+/* עיצוב המודאל בהתאמה לתמונה */
+.custom-modal-header {
+    text-align: right;
+    font-weight: 700;
+    font-size: 18px;
+    color: #4a3728;
+}
+
+.gold-label {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.custom-input, .custom-select ::ng-deep .nz-select-selector {
+    border-radius: 4px !important;
+    border: 1px solid #dcdcdc !important;
+    height: 40px !important;
+    display: flex;
+    align-items: center;
+}
+
+/* אזור העלאת תמונה מעוצב */
+.upload-zone-box {
+    border: 1px dashed #c49667;
+    border-radius: 6px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: #fffcf9;
+    transition: 0.3s;
+    overflow: hidden;
+    position: relative;
+}
+
+.upload-zone-box:hover {
+    background: #f7efea;
+}
+
+.upload-text {
+    color: #c49667;
+    font-weight: 600;
+}
+
+.image-preview-large {
+    width: 100%;
+    height: 100%;
+}
+
+.image-preview-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* פוטר המודאל */
+.modal-footer-custom {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.btn-confirm {
+    background-color: #c49667 !important;
+    border: none !important;
+    color: white !important;
+    height: 40px;
+    width: 80px;
+    border-radius: 6px !important;
+    font-weight: bold;
+}
+
+.btn-confirm:disabled {
+    background-color: #e0e0e0 !important;
+    color: #a0a0a0 !important;
+}
+
+.btn-cancel {
+    border: 1px solid #dcdcdc !important;
+    color: #333 !important;
+    height: 40px;
+    width: 80px;
+    border-radius: 6px !important;
+}
+
+.error-msg-inline {
+    color: #ff4d4f;
+    background: #fff1f0;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #ffccc7;
+    text-align: center;
+}

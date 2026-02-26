@@ -1,0 +1,59 @@
+<div class="package-page">
+    <h1 class="package-title">בוחרים חבילת כרטיסים</h1>
+    <div class="package-subtitle">בחרו חבילה אחת או יותר ותחלקו את הכרטיסים בין הפרסים שאהבתם</div>
+    
+    <div class="package-sort-row right-align">
+        <p-select 
+            [(ngModel)]="selectedSort" 
+            optionLabel="label"
+            optionValue="value"
+            (onChange)="sortBy(selectedSort)"
+            class="package-sort-select red-theme"
+            placeholder="בחר סוג מיון">
+        </p-select>
+    </div>
+     <div *ngIf="authSrv.isAdmin()" class="package-admin-form">
+        <input [(ngModel)]="draftPackage.name" placeholder="name" />
+        <input [(ngModel)]="draftPackage.description" placeholder="description" />
+        <input [(ngModel)]="draftPackage.price" placeholder="price" />
+        <input [(ngModel)]="draftPackage.quantity" placeholder="quantity" />
+        <button type="button" (click)="save()">{{isEditMode ? 'update' :'Add'}}</button>
+        <button type="button" (click)="resetForm()" *ngIf="isEditMode">בטל</button>
+    </div>
+    <div class="package-cards-row">
+        @for(p of list$ | async ; track p; let i = $index)
+        {
+        <div [class]="'package-card package-card-' + (i % 3)">
+            <div class="package-card-ribbon ribbon-minimal">
+                <span class="ribbon-text">חבילה</span>
+            </div>
+            <div class="package-card-inner">
+                <div class="package-card-title aristocrat-font">{{p.name}}</div>
+                <div class="package-card-quantity aristocrat-font">{{p.quantity}}</div>
+                <div class="package-card-quantity-label">כרטיסים</div>
+                <div class="package-card-pricing">₪{{p.price}}</div>
+                <div [style]="{color: '#000', fontWeight: 'bold'}" class="package-card-receive">בחבילה הזו תקבלו</div>
+                <ul class="package-card-benefits">
+                    <li><span class="benefit-icon gold-icon">★</span> {{p.description}}</li>
+                    <li><span class="benefit-icon silver-icon">⎈</span> כרטיסים להגרלת הכספת</li>
+                    <li><span class="benefit-icon gold-icon">🎁</span>{{p.quantity}} מתנות לבחירה</li>
+                </ul>
+            </div>
+            <div class="package-card-bottom">
+                <div class="package-card-image-placeholder aristocrat-font">
+                    <i class="pi pi-gift"></i>
+                </div>
+                @if(authSrv.isLoggedIn()){
+                <div class="actions-group exact-layout overlay-actions">
+                    <div class="actions-controls pill">
+                        <button class="action-btn plus-btn" (click)="addPackage(p)">+</button>
+                        <div class="quantity-display aristocrat-font">{{getQuentityInCart(p.id!)}}</div>
+                        <button class="action-btn minus-btn" (click)="deletePackage(p.id!)">−</button>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+        }
+    </div>
+</div>
