@@ -137,7 +137,7 @@ builder.Services.AddControllers()
 
     // 8. Configure the HTTP request pipeline (ORDER MATTERS)
 
-    // ÷åãí ëì CORS ëãé ìàôùø ãôãôðéí
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ CORS ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     app.UseCors("AllowAngular");
 
     if (app.Environment.IsDevelopment())
@@ -148,11 +148,11 @@ builder.Services.AddControllers()
 
     app.UseHttpsRedirection();
 
-    // Middleware îåúàí àéùéú (ìåâéí åäâáìú ÷öá)
+    // Middleware ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½)
     app.UseRequestLogging();
     app.UseRateLimiting();
 
-    // çåáä: ÷åãí àéîåú åàæ äøùàåú
+    // ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     app.UseAuthentication();
     app.UseAuthorization();
 
@@ -186,3 +186,8 @@ builder.Services.AddControllers()
 //{
 //    Log.CloseAndFlush();
 //}
+
+ builder.Services.AddStackExchangeRedisCache(options =>
+    {
+        options.Configuration = builder.Configuration["Redis:ConnectionString"] ?? "localhost:6379";
+    });

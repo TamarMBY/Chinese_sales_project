@@ -8,3 +8,6 @@ bin/
 obj/
 **/bin/
 **/obj/
+
+
+// "DefaultConnection": "Server=DESKTOP-IN2P6D4;DataBase=NewChineseSalleDb;Integrated Security=SSPI;Persist Security Info=False;TrustServerCertificate=True"

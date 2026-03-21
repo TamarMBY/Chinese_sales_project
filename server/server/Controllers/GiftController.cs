@@ -15,30 +15,41 @@ namespace server.Controllers
     public class GiftController : ControllerBase
     {
         private readonly IGiftService _giftService;
+        private readonly IDistributedCache _cache;
 
-        public GiftController(IGiftService giftService)
+        public GiftController(IGiftService giftService, IDistributedCache cache)
         {
             _giftService = giftService;
+            _cache = cache;
         }
 
         [HttpGet]
-        [ProducesResponseType(typeof(IEnumerable<GiftRespnseDto>), StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<GiftRespnseDto>>> GetAll()
+        [ProducesResponseType(typeof(IEnumerable<GiftResponseDto>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<GiftResponseDto>>> GetAll()
         {
-            var gifts = await _giftService.GetAll();
-            return Ok(gifts);
-        }
-        [HttpGet("{id}")]
-        [ProducesResponseType(typeof(GiftRespnseDto), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult> GetById(int id)
-        {
-            var gift = await _giftService.GetById(id);
-            if (gift == null)
+            var cacheKey = "all-gifts";
+
+            var cachedData = await _cache.GetStringAsync(cacheKey);
+
+            if (!string.IsNullOrEmpty(cachedData))
             {
-                return NotFound(new { message = $"Gift with ID {id} not exist" });
+                _logger.LogInformation("CACHE HIT");
+                var giftsFromCache = JsonSerializer.Deserialize<IEnumerable<GiftResponseDto>>(cachedData);
+                return Ok(giftsFromCache);
             }
-            return Ok(gift);
+
+            _logger.LogInformation("CACHE MISS");
+
+            var gifts = await _giftService.GetAll();
+
+            var serializedData = JsonSerializer.Serialize(gifts);
+            var cacheOptions = new DistributedCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(300)
+            };
+            await _cache.SetStringAsync(cacheKey, serializedData, cacheOptions);
+
+            return Ok(gifts);
         }
         [HttpPost]
         //[Authorize(Roles = "Admin")]
